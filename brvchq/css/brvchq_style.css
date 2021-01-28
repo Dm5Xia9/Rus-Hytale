@@ -1,0 +1,135 @@
+.all_body {
+    margin: 0;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: #ff0000; /* цвет поменять*/
+    -webkit-font-smoothing: antialiasing;
+
+    background-color: #4b4b4b;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Container */
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+    position: absolute;
+    height: 73px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    /*background-color: #393939;*/
+}
+
+.header__inner {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    /*border-bottom: 1px solid rgb(0, 0, 0);*/
+    align-items: center;
+}
+
+/* Navigation */
+
+.nav {
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    margin-left: 25px;
+    color: #89c04a;
+    text-decoration: none;
+    transition: 0.1s linear;
+}
+
+.nav__link:first-child {
+    margin-left: 0px;
+}
+
+.nav__link:hover {
+    color: #88e919;
+}
+
+/* Intro Background */
+
+.intro {
+    height: 940px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 73px;
+    background: url("../images/brvchq_MainBackground.jpg") center / cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    margin-bottom: 140px;
+    text-align: center;
+}
+
+.intro__title {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 120px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.intro__subtitle {
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* Btn */
+
+.btn__start {
+    margin-top: 60px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    color:#fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 40px;
+    cursor: pointer;
+    transition: color 0.2s linear;
+    transition: background-color 0.4s linear;
+}
+
+.btn__start--style {
+    background-color: #ff000000;
+
+}
+
+.btn__start--style:hover {
+    background-color: #ffffff;
+    color: #333333;
+}
