@@ -1,0 +1,15 @@
+.header{
+    background-color: aqua;
+    position: fixed;
+    width: 110%;
+    height: 60px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+.LogoHeader img{
+    width: 200px;
+    margin-left: 160px;
+}
+* {
+    box-sizing: border-box;
+}
