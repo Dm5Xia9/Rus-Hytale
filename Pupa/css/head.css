@@ -45,7 +45,7 @@
 .MenuHeader div a{
     top:0px;
 }
-.MenuHeader div button:hover {
+.MenuHeader button:hover {
     color: #8BC34A;
 }
 
