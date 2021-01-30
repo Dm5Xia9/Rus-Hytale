@@ -19,19 +19,12 @@ body{
 .OpBackEf1{
     position: absolute;
     width: 100%;
-    z-index: 100;
-    animation-name: pulse1;
-    animation-duration: 3500ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    z-index: 100; 
 }
 .OpBackEf2{
     position: absolute;
     width: 100%;
     z-index: 100;
-    animation-name: pulse2;
-    animation-duration: 3500ms;
-    animation-iteration-count: infinite;
 }
 .MainBlockTexth1{
     position: absolute;
