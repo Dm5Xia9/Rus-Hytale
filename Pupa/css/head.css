@@ -1,15 +1,83 @@
 .header{
-    background-color: aqua;
+    background-color: rgba(65, 65, 65, 0);
     position: fixed;
     width: 110%;
-    height: 60px;
-    margin-left: -10px;
-    margin-top: -10px;
+    height: 65px;
+    z-index: 999999;
 }
-.LogoHeader img{
-    width: 200px;
-    margin-left: 160px;
+.headerScroll1{
+    background-color: rgba(65, 65, 65, 0.2);
+}
+.headerScroll2{
+    background-color: rgba(65, 65, 65, 0.4);
+}
+.headerScroll3{
+    background-color: rgba(65, 65, 65, 0.6);
+}
+.headerScroll4{
+    background-color: rgba(65, 65, 65, 0.8);
+}
+.headerScroll5{
+    background-color: rgba(65, 65, 65, 1);
+}
+.LogoHeader{
+    float: left;
+    margin-left: 200px;
+}
+.Logo{
+    margin-top: -2px;
+    width: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.MenuHeader button{
+    letter-spacing: 1px;
+    color: #a8a8a8;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    text-decoration: none;
+}
+.MenuHeader button:hover {
+    color: #8BC34A;
+}
+.MenuHeader{
+    margin-top: 8px;
+    margin-right: 280px;
+    float: right;
 }
 * {
     box-sizing: border-box;
+}
+.ButtonPulsHeader{
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background-color:rgba(65, 65, 65, 0);;
+    outline: 0;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem rgba(65, 65, 65, 0);
+    cursor: pointer;
+}
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+@keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+h2{
+    font-size: 1000px;;
 }

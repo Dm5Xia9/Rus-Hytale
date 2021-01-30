@@ -1,0 +1,121 @@
+
+body{
+    background: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.imgMainBlock{
+    
+}
+.BackMain img{
+    position: absolute;
+    display: block;
+}
+.OpBack{
+    display: block;
+    width: 100%;
+}
+.OpBackEf1{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    animation-name: pulse1;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.OpBackEf2{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    animation-name: pulse2;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
+.MainBlockTexth1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.MainBlockTexth1 h1{
+    color:  #e7e7e7;
+    margin-top: 560px;
+    font-weight: 10;
+    font-family: 'Montserrat';
+    font-size: 140px;
+    letter-spacing: 1px;
+}
+.ripple1 {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 500ms linear;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+@keyframes ripple1 {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  .noselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.PlayMenu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: 43%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.buttonPlay {
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 40px;
+    border: 3px solid #cccccc;
+    color: #cccccc;
+    margin-left: 42%;
+    margin-top: 1050px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s linear, color 0.4s linear;
+  }
+  .buttonPlay:hover {
+      background-color: #cccccc;
+      color: black;
+  }
+
+  
+@keyframes pulse1{
+    50%{margin-left: -10px;}
+    100%{margin-left: 0px;}
+}
+@keyframes pulse2{
+    50%{margin-left: -15px;}
+    100%{margin-left: 0px;}
+}
+
+
+
