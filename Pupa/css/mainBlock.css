@@ -6,9 +6,6 @@ body{
     min-width: 1170px;
 }
 
-.imgMainBlock{
-    
-}
 .BackMain img{
     position: absolute;
     display: block;
@@ -27,20 +24,21 @@ body{
     width: 100%;
     z-index: 100;
 }
-.MainBlockTexth1{
+.MainBlockImg{
     position: absolute;
     left: 0;
     top: 0;
-    left: 50%;
+    left: 49%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.MainBlockTexth1 h1{
+.MainBlockImg img{
+    width: 18vw;
     color:  #e7e7e7;
-    margin-top: 50%;
+    margin-top: 170%;
     font-weight: 10;
     font-family: 'Montserrat';
     font-size: 10vw;
@@ -79,11 +77,12 @@ body{
     z-index: 1000;
 }
 .buttonPlay {
+    margin-left: -0.4vw;
     display: inline-block;
     vertical-align: top;
-    padding: 1vw 3vw;
-    border: 3px solid #cccccc;
-    color: #cccccc;
+    padding: 1vw 2.8vw;
+    border: 3px solid #e7e7e7;
+    color: #e7e7e7;
     margin-top:70vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
@@ -96,7 +95,7 @@ body{
     transition: background 0.3s linear, color 0.4s linear;
   }
   .buttonPlay:hover {
-      background-color: #cccccc;
+      background-color: #e7e7e7;
       color: black;
   }
 
