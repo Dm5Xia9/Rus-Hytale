@@ -2,7 +2,7 @@
     background-color: rgba(65, 65, 65, 0);
     position: fixed;
     width: 110%;
-    height: 65px;
+    height: 9%;
     z-index: 999999;
 }
 .headerScroll1{
@@ -22,33 +22,37 @@
 }
 .LogoHeader{
     float: left;
-    margin-left: 200px;
+    margin-left: 12%;
 }
 .Logo{
     margin-top: -2px;
-    width: 70px;
+    max-width: 4.5vw;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 .MenuHeader button{
     letter-spacing: 1px;
     color: #a8a8a8;
-    font-size: 22px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    font-size: 1.45vw;
+    padding-bottom: 0.7vw;
+    padding-right: 0.7vw;
+    padding-left: 0.7vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     text-decoration: none;
+    
 }
-.MenuHeader button:hover {
+.MenuHeader div a{
+    top:0px;
+}
+.MenuHeader div button:hover {
     color: #8BC34A;
 }
+
 .MenuHeader{
-    margin-top: 8px;
-    margin-right: 280px;
+    margin-top: 1.2vw;
+    margin-right: 20vw;
+    
     float: right;
 }
 * {
@@ -81,3 +85,4 @@
 h2{
     font-size: 1000px;;
 }
+@media 

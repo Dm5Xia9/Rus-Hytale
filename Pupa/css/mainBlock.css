@@ -3,6 +3,7 @@ body{
     background: rgb(73, 73, 73);
     margin: 0px;
     overflow-x: hidden;
+    min-width: 1170px;
 }
 
 .imgMainBlock{
@@ -39,10 +40,10 @@ body{
 }
 .MainBlockTexth1 h1{
     color:  #e7e7e7;
-    margin-top: 560px;
+    margin-top: 50%;
     font-weight: 10;
     font-family: 'Montserrat';
-    font-size: 140px;
+    font-size: 10vw;
     letter-spacing: 1px;
 }
 .ripple1 {
@@ -69,7 +70,7 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    left: 43%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -80,16 +81,15 @@ body{
 .buttonPlay {
     display: inline-block;
     vertical-align: top;
-    padding: 12px 40px;
+    padding: 1vw 3vw;
     border: 3px solid #cccccc;
     color: #cccccc;
-    margin-left: 42%;
-    margin-top: 1050px;
+    margin-top:70vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
     text-transform: uppercase;
     white-space: nowrap;
-    font-size: 22px;
+    font-size: 1vw;
     letter-spacing: 1px;
     font-weight: 700;
     text-decoration: none;
