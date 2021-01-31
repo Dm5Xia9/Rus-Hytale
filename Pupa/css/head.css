@@ -2,12 +2,8 @@
     background-color: rgba(65, 65, 65, 0);
     position: fixed;
     width: 110%;
-    height: 9%;
+    height: 4vw;
     z-index: 999999;
-}
-.MainBlock{
-    width: 100%;
-    height: 55vw;
 }
 .headerScroll1{
     background-color: rgba(65, 65, 65, 0.2);
@@ -30,7 +26,7 @@
 }
 .Logo{
     margin-top: -2px;
-    max-width: 4.5vw;
+    max-width: 5vw;
     display: block;
     
 }
@@ -54,7 +50,7 @@
 }
 
 .MenuHeader{
-    margin-top: 1.2vw;
+    margin-top: 0.5vw;
     margin-right: 20vw;
     
     float: right;
@@ -72,6 +68,7 @@
     border-radius: 0.25rem;
     box-shadow: 0 0 0.5rem rgba(65, 65, 65, 0);
     cursor: pointer;
+    padding-top: 0.7vw;
 }
 .ripple {
     position: absolute;
