@@ -59,3 +59,36 @@
     line-height: 1.5;
     color: #6c7279;
 }
+.JoinBlock{
+    position: absolute;
+    margin-left: 0px;
+    top: 88vw;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.JoinBlock h4{
+    margin-left: 0.3vw;
+    font-size: 2.5vw;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.DSFrame{
+    position: absolute;
+    margin-left: 0px;
+    top: 110vw;
+    left: 18%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
