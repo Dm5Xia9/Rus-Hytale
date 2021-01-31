@@ -1,4 +1,4 @@
-.WhyBlock{
+.NextBlock{
     width: 100%;
     height: 56vw;
 }
@@ -59,7 +59,7 @@
     line-height: 1.5;
     color: #6c7279;
 }
-.JoinBlock{
+.JoinBlockText{
     position: absolute;
     margin-left: 0px;
     top: 88vw;
@@ -73,7 +73,7 @@
     width: 100%;
     text-align: center;
 }
-.JoinBlock h4{
+.JoinBlockText h4{
     margin-left: 0.3vw;
     font-size: 2.5vw;
     color: #e7e7e7;
