@@ -92,3 +92,7 @@
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.DSFrame iframe{
+    width: 20vw;
+    height: 20vw;
+}
