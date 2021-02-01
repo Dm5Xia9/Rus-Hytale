@@ -1,0 +1,14 @@
+{% extends 'index.html'%}
+{% block content %}
+{% if num == 1 %}
+{% autoescape off %}{{cont1.text}}{% endautoescape %}
+{% elif num == 2 %}
+{% autoescape off %}{{cont1.text}}{% endautoescape %}
+{% autoescape off %}{{cont2.text}}{% endautoescape %}
+{% elif num == 3 %}
+{% autoescape off %}{{cont1.text}}{% endautoescape %}
+{% autoescape off %}{{cont2.text}}{% endautoescape %}
+{% autoescape off %}{{cont3.text}}{% endautoescape %}
+{% else %}
+{% endif%}
+{% endblock %}
