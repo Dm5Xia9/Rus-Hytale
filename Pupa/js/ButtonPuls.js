@@ -23,3 +23,4 @@ function createRipple(event) {
   for (const button of buttons) {
     button.addEventListener("click", createRipple);
   }
+

@@ -51,12 +51,31 @@
     font-size: 0.vw;
     color: #000000;
     letter-spacing: 1px;
-    font-family: 'Raleway';
+    
     font-weight: 100px;
     margin-top: 0.4vw;
     padding-left: 2vw;
     padding-right: 2vw;
 }
+.ButtonPulsNew{
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 40px;
+    border: 2px solid #484848;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Raleway';
+    text-decoration: none;
+    margin-top: 11vw;
+    transition: background 0.3s linear, color 0.4s linear;
+}
+.ButtonPulsNew:hover {
+      background-color: #484848;
+      color: white;
+      border-color: #e4e4e4;
+  }
 .New1{
     width: 23vw;
     height: 21vw;
@@ -66,7 +85,6 @@
     margin-left: 8.6vw;
     margin-top: -19vw;
 }
-
 .New2{
     width: 23vw;
     height: 21vw;
