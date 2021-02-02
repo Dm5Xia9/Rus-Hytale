@@ -5,6 +5,10 @@ body {
     background-color: #282828;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
 *
 *:before,
 *:after {
@@ -17,25 +21,30 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Header */
 
 .header {
-    padding: 0 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .header_inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #fdc501;
 }
 
-.header_logo {
+/* .header_logo { 
 
-}
+}*/
 
 /* Nav */
 
@@ -60,3 +69,116 @@ body {
 .nav_link:hover {
     color: #fdc501
 }
+
+/* intro */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 850px;
+    background: url("../img/intro_background/1.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.intro_inner {
+    width: 100%;
+    max-width: 880px;
+}
+
+.intro_title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.intro_title:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    
+    background-color: #fdc501;
+}
+
+.intro_subtitle {
+    color: #fff;
+    font-family: 'Raleway', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+/* why_us */
+
+.why_us {
+    margin: 60px 0;
+}
+
+.why_us_inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.why {
+    width: 20%;
+    padding: 20px 12px;
+    background-color: #282828;
+    transition: background 0.1s linear;
+    text-align: center;
+    margin: 15px 0;
+
+    border: 6px solid #282828;
+    border-radius: 25px;
+}
+
+.why_us_title {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;  
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+.why_title {
+    font-family: 'Raleway', sans-serif;
+    color:#fdc501;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+
+    margin-bottom: 15px;  
+
+    transition: font-weight 0.2s linear; 
+    transition: color 0.1s linear  
+}
+.why:hover {
+    background-color: #424242;
+}
+
+.why_info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+
+
+
+
+/* media */
+
+/* @media (max-width: 1200px) {
+    .intro_title
+}*/
