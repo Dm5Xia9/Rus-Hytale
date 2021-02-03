@@ -43,6 +43,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
     left: 0;
     z-index: 1000;
+    /* visibility: hidden; */
 }
 
 .header_inner {
@@ -97,7 +98,7 @@ h1,h2,h3,h4,h5,h6 {
     background: url("../img/intro_background/1.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .intro_inner {
@@ -165,11 +166,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .why {
+
     width: 20%;
     padding: 20px 12px;
     background-color: #282828;
     transition: background 0.1s linear;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     margin: 15px 0;
 
     border: 6px solid #282828;
@@ -188,7 +192,6 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
     margin-bottom: 15px;
     text-align: center;
-
 }
 
 .why_title {
@@ -202,7 +205,11 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 15px;  
 
     transition: font-weight 0.2s linear; 
-    transition: color 0.1s linear  
+    transition: color 0.1s linear; 
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .why:hover {
     background-color: #424242;
@@ -214,6 +221,10 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
     color: #fff;
     align-items: flex-end;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 /* price list */
@@ -385,8 +396,32 @@ h1,h2,h3,h4,h5,h6 {
 
 /* media */
 
-@media (max-width: 1260px) { 
-    .container {
-        max-width: none;
+/* @media (max-width: 1260px) {
+
+
+    .intro {
+        height: 1000px;
     }
-}
+
+    .why {
+
+        width: 10%;
+    }
+
+    .intro_title {
+        font-size: 30px;
+    }
+
+    .why_us_title  {
+        font-size: 20px;
+    }
+
+    .price_title {
+        font-size: 20px;
+    }
+
+    .contact {
+        max-width: 100%;
+    }
+} */
+
