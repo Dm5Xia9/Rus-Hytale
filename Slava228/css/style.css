@@ -1,4 +1,11 @@
 body {
+    -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+    user-select: none; 
+    
+    font-family: 'Raleway', sans-serif;
+
     margin: 0;
     font-size: 18px;
     color: #f33100;
@@ -138,6 +145,10 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 25px;
 }
 
+.why:last-child .why_info {
+    margin-top: 33px;
+}
+
 .why_us_title {
     color: #fff;
     font-family: 'Raleway', sans-serif;  
@@ -171,6 +182,65 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
+    align-items: flex-end;
+}
+
+/* price list */
+
+.price {
+    padding: 20px 0;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    background-color: #d1aa1c;
+}
+
+.price_title {
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.price_inner {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.price_inner:after {
+    content: "";
+    display: block;
+    width: 220px;
+    background-color: #424242;
+    height: 1px;
+}
+
+.price_main {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.price_info {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* reviews */
+
+.reviews {
+    margin: 50px 0;
+}
+
+.reviews_title {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;  
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 
