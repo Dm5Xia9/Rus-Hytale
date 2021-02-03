@@ -5,7 +5,7 @@ body {
     user-select: none; 
     
     font-family: 'Raleway', sans-serif;
-
+    overflow-x: hidden;
     margin: 0;
     font-size: 18px;
     color: #f33100;
@@ -32,7 +32,7 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0 auto;
     padding: 0 30px;
     padding-left: 30px;
-
+    min-width: 1000px;
 }
 
 /* Header */
@@ -44,6 +44,7 @@ h1,h2,h3,h4,h5,h6 {
     left: 0;
     z-index: 1000;
     /* visibility: hidden; */
+    min-width: 1000px;
 }
 
 .header_inner {
@@ -95,17 +96,20 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: column;
     justify-content: center;
     height: 850px;
+    width: 100%;
     /* background: url("../img/intro_background/1.jpg") center no-repeat; */
     -webkit-background-size: cover;
     background-size: cover;
     /* padding-right: 7%; */
+    min-width: 1000px;
 }
 
 .intro_back {
     margin-top: -5px;
     position: absolute;
     z-index: -100;
-    width: 100%;
+    top: 0px;
+    min-width: 1000px;
 }
 
 .intro_inner {
@@ -164,6 +168,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .why_us {
     margin: 60px 0;
+    min-width: 1000px;
 }
 
 .why_us_inner {
@@ -401,19 +406,4 @@ h1,h2,h3,h4,h5,h6 {
 
 /* media */
 
-@media (max-width: 900px) {
-
-    .why_title {
-        font-size: 80px;
-    }
-
-    .why_info {
-        font-size: 40px;
-    }
-    
-    .contact {
-        max-width: 10%;
-    }
-    
-} 
 
