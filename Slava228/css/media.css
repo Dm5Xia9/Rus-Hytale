@@ -1,0 +1,153 @@
+@media only screen and (max-width: 910px){
+    body{
+        font-size: 10px;
+    }
+    .logo_text {
+        font-size: 22px;
+    }
+    .intro_back{
+        object-fit: cover;
+        width: 100%;
+        height: 400px;
+    }
+    .intro_title{
+        font-size: 30px;
+    }
+    .why_us_title{
+        font-size: 25px;
+    }
+    .why_title{
+        font-size: 15px;
+    }
+    .why_info{
+        font-size: 13px;
+    }
+    .price_title{
+        font-size: 40px;
+    }
+    .price_main{
+        font-size: 20px;
+    }
+    .price_info {
+        font-size: 15px;
+    }
+    .price{
+        margin-left: -1px;
+        width: 100%;
+    }
+    .contact_title{
+        font-size: 20px;
+    }
+    .tel{
+        font-size: 15px;
+    }
+    .contact_item{
+        font-size: 20px;
+    }
+    .contact_ref{
+        width: 30px;
+        height: 30px;
+    }
+    .contact_icon{
+        height: 25px;
+    }
+    .contact_item_name_kirill{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 550px){
+    body{
+        font-size: 8px;
+    }
+    .logo_text {
+        font-size: 15px;
+    }
+    .intro_title{
+        font-size: 20px;
+    }
+    .why_us_title{
+        font-size: 15px;
+    }
+    .why_title{
+        font-size: 10px;
+    }
+    .why_info{
+        font-size: 9px;
+    }
+    .price_title{
+        font-size: 30px;
+    }
+    .price_main{
+        font-size: 15px;
+    }
+    .price_info {
+        font-size: 10px;
+    }
+    .price{
+        width: 100%;
+    }
+    .contact_title{
+        font-size: 15px;
+    }
+    .tel{
+        font-size: 10px;
+    }
+    .contact_item{
+        font-size: 15px;
+    }
+    .contact_ref{
+        width: 20px;
+        height: 20px;
+    }
+    .contact_icon{
+        height: 15px;
+    }
+    .contact_item_name_kirill{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 400px){
+    body{
+        font-size: 6px;
+    }
+    .logo_text {
+        font-size: 12px;
+    }
+    .intro_title{
+        font-size: 10px;
+    }
+    .why_us_title{
+        font-size: 10px;
+    }
+    .why_title{
+        font-size: 10px;
+    }
+    .why_info{
+        font-size: 9px;
+    }
+    .price_title{
+        font-size: 20px;
+    }
+    .price_main{
+        font-size: 10px;
+    }
+    .price_info {
+        font-size: 9px;
+    }
+    .price{
+        margin-left: 29px;
+        width: 110%;
+    }
+    .contact_title{
+        font-size: 10px;
+    }
+    .tel{
+        font-size: 10px;
+    }
+    .contact_item{
+        font-size: 10px;
+    }
+    .contact_item_name_kirill{
+        font-size: 10px;
+    }
+}
