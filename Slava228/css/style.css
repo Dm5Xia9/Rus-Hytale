@@ -1,4 +1,11 @@
 body {
+    -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+    user-select: none; 
+    
+    font-family: 'Raleway', sans-serif;
+
     margin: 0;
     font-size: 18px;
     color: #f33100;
@@ -23,6 +30,9 @@ h1,h2,h3,h4,h5,h6 {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 30px;
+    padding-left: 30px;
+
 }
 
 /* Header */
@@ -33,6 +43,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
     left: 0;
     z-index: 1000;
+    /* visibility: hidden; */
 }
 
 .header_inner {
@@ -42,9 +53,16 @@ h1,h2,h3,h4,h5,h6 {
     border-bottom: 1px solid #fdc501;
 }
 
-/* .header_logo { 
+.header_logo {
+    background-color: #d1aa1c;
+}
 
-}*/
+.logo_text {
+    font-size: 30px;
+    font-weight: 700;
+    color: #282828;
+    padding: 15px 5px;
+}
 
 /* Nav */
 
@@ -80,7 +98,7 @@ h1,h2,h3,h4,h5,h6 {
     background: url("../img/intro_background/1.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .intro_inner {
@@ -111,7 +129,28 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 18px;
     font-weight: 500;
     margin-top: 15px;
+    margin-bottom: 100px;
     text-transform: uppercase;
+}
+
+.main_button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #d1aa1c;
+    color: #282828;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: 2px solid #d1aa1c;
+    border-radius: 10px;
+
+    transition: background-color 0.1s linear;
+}
+
+.main_button:hover {
+    background-color: #f0d164;
+    border: 2px solid #f0d164;
 }
 
 /* why_us */
@@ -127,15 +166,22 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .why {
+
     width: 20%;
     padding: 20px 12px;
     background-color: #282828;
     transition: background 0.1s linear;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     margin: 15px 0;
 
     border: 6px solid #282828;
     border-radius: 25px;
+}
+
+.why:last-child .why_info {
+    margin-top: 33px;
 }
 
 .why_us_title {
@@ -146,7 +192,6 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
     margin-bottom: 15px;
     text-align: center;
-
 }
 
 .why_title {
@@ -160,7 +205,11 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 15px;  
 
     transition: font-weight 0.2s linear; 
-    transition: color 0.1s linear  
+    transition: color 0.1s linear; 
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .why:hover {
     background-color: #424242;
@@ -171,6 +220,174 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
+    align-items: flex-end;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* price list */
+
+.price {
+    padding: 20px 0;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    background-color: #d1aa1c;
+}
+
+.price_title {
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.price_inner {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.price_inner:after {
+    content: "";
+    display: block;
+    width: 220px;
+    background-color: #424242;
+    height: 1px;
+}
+
+.price_main {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.price_info {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* reviews */
+
+.reviews {
+    margin: 50px 0;
+}
+
+.reviews_title {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;  
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* contact us */
+
+.contacts {
+    flex-wrap: wrap;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact {
+    max-width: 50%;
+}
+
+.contact_title {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;  
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.contact_item {
+    display: block;
+    color: #fff;
+    font-family: 'Raleway', sans-serif; 
+    font-size: 25px;
+    margin-bottom: 20px ;
+}
+
+.contact_item_name {
+    margin-bottom: 10px;
+}
+
+.referals {
+    display: flex;
+}
+
+.contact_ref {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #282828;
+    transition: background-color 0.1s linear;
+}
+
+.contact_ref:hover {
+    background-color: #fff;
+}
+
+.contact_icon {
+    display: block;
+    margin: auto 0;
+    height: 35px;
+    fill: #fff;
+    transition: fill 0.2s linear ;
+}
+
+.contact_ref:hover .contact_icon {
+    fill: #282828;
+}
+
+.tel {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.vk_id_background {
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #282828;
+}
+
+.contact_item_name_kirill {
+    color: #fff;
+    font-family: 'Raleway', sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 5px;
+    transition: color 0.1s linear;
+}
+
+.vk_id_background:hover {
+    transition: background-color 0.1s linear;
+    background-color: #fff;
+    color:#282828;
+}
+
+.vk_id_background:hover .contact_item_name_kirill{
+    color: #282828;
+}
+
+.contact_map {
+    max-width: 50%;
 }
 
 
@@ -179,6 +396,32 @@ h1,h2,h3,h4,h5,h6 {
 
 /* media */
 
-/* @media (max-width: 1200px) {
-    .intro_title
-}*/
+/* @media (max-width: 1260px) {
+
+
+    .intro {
+        height: 1000px;
+    }
+
+    .why {
+
+        width: 10%;
+    }
+
+    .intro_title {
+        font-size: 30px;
+    }
+
+    .why_us_title  {
+        font-size: 20px;
+    }
+
+    .price_title {
+        font-size: 20px;
+    }
+
+    .contact {
+        max-width: 100%;
+    }
+} */
+
