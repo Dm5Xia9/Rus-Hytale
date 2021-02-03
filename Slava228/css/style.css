@@ -95,10 +95,17 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: column;
     justify-content: center;
     height: 850px;
-    background: url("../img/intro_background/1.jpg") center no-repeat;
+    /* background: url("../img/intro_background/1.jpg") center no-repeat; */
     -webkit-background-size: cover;
     background-size: cover;
-    /* overflow: hidden; */
+    /* padding-right: 7%; */
+}
+
+.intro_back {
+    margin-top: -5px;
+    position: absolute;
+    z-index: -100;
+    width: 100%;
 }
 
 .intro_inner {
@@ -166,7 +173,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .why {
-
     width: 20%;
     padding: 20px 12px;
     background-color: #282828;
@@ -174,7 +180,6 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 15px 0;
 
     border: 6px solid #282828;
     border-radius: 25px;
@@ -396,32 +401,19 @@ h1,h2,h3,h4,h5,h6 {
 
 /* media */
 
-/* @media (max-width: 1260px) {
+@media (max-width: 900px) {
 
-
-    .intro {
-        height: 1000px;
+    .why_title {
+        font-size: 80px;
     }
 
-    .why {
-
-        width: 10%;
+    .why_info {
+        font-size: 40px;
     }
-
-    .intro_title {
-        font-size: 30px;
-    }
-
-    .why_us_title  {
-        font-size: 20px;
-    }
-
-    .price_title {
-        font-size: 20px;
-    }
-
+    
     .contact {
-        max-width: 100%;
+        max-width: 10%;
     }
-} */
+    
+} 
 
