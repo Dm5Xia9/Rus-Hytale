@@ -1,0 +1,75 @@
+.bodyStyle{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+    min-width: 1170px;
+}
+.Content{
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    position: absolute;
+    
+}
+.ContentTitle{
+    margin-top: 7vw;
+    font-size: 3vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    color:rgb(233, 233, 233);
+}
+.listNews{
+    display: flex;
+    flex-wrap: wrap;
+}
+.new{
+    width: 33.33333%;
+    text-align: center;
+    margin: 5vw 0;
+    padding: 0 30px;
+}
+.title_new{
+    font-size: 1.2vw;
+    color: #000000;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.text_new{
+    font-size: 1vw;
+    color: #000000;
+    letter-spacing: 1px;
+    
+    font-weight: 100px;
+}
+.img_new{
+    width: 20vw;
+}
+.newBack{
+    position: absolute;
+    width: 21vw;
+    z-index: -1;
+    margin-left: -10.5vw;
+    margin-top: -1.5vw;
+}
+.ButtonPulsNew{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8vw 2vw;
+    border: 2px solid #484848;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    font-weight: 700;
+    font-family: 'Raleway';
+    text-decoration: none;
+    margin-top: 11vw;
+    transition: background 0.3s linear, color 0.4s linear;
+    z-index: 10000;
+}
+.ButtonPulsNew:hover {
+    background-color: #484848;
+    color: white;
+    border-color: #e4e4e4;
+}
