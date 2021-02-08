@@ -19,7 +19,6 @@ from django.urls import path, include
 from news import views
 
 urlpatterns = [
-    path('', views.index, name='home'),
+    path('', include('news.urls')),
     path('admin/', admin.site.urls),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

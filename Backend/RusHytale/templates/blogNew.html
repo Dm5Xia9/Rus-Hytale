@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="http://127.0.0.1:8000/static/css/head.css" rel="stylesheet">
+        <link href="http://127.0.0.1:8000/static/css/newMainBlock.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" >
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body class="bodyStyle">
+        <div class="header">
+            <div class="LogoHeader">
+                <a href="http://127.0.0.1:8000"><img class="Logo" src="http://127.0.0.1:8000/static/images/MiniLogo.png"></a>
+            </div>
+            <div class="MenuHeader">
+                <a href="http://127.0.0.1:8000"><button  class="ButtonPulsHeader">Главная</button></a>
+                <a href="http://127.0.0.1:8000/news"><button  class="ButtonPulsHeader">Новости</button></a>
+                <a href="https://forum.rushytale.ru/"><button  class="ButtonPulsHeader">Форум</button></a>
+            </div>
+        </div>
+        <div class="newMainBlock">
+            <!-- <img class="imgBlogText" src="images/TopBlog.png"> -->
+            <!-- <img class="imgBlogTextCenter" src="images/CenterBlog.png">
+            <img class="imgBlogText" src="images/BottonBlog.png"> -->
+            {% block content %}{% endblock %}
+        </div>
+        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/jquery.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/ButtonPuls.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/Scroll.js"></script>
+    </body>
+</html>

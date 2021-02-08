@@ -1,0 +1,12 @@
+{% extends 'news.html'%}
+{% block content %}
+{% for latest in latest_news %}
+                <div class="new">
+                    <img class="newBack" src="http://127.0.0.1:8000/static/images/newBack.png">
+                    <h2 class="title_new">{{latest.title}}</h2>
+                    <img class="img_new" src="http://127.0.0.1:8000/static/{{ latest.new_img.name }}">
+                    <h3 class="text_new">{{latest.text|truncatechars:200}}</h3>
+                    <a href="{% url 'news:deatail' latest.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                </div>
+{% endfor %}
+{% endblock %}

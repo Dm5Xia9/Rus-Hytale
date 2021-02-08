@@ -1,0 +1,139 @@
+.NewBlockText{
+    position: absolute;
+    margin-left: 0px;
+    top: 135vw;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.NewBlockText h4{
+    margin-left: 0.3vw;
+    font-size: 2.5vw;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.NewBlock{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    margin-left: 0px;
+    top: 170vw;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.NewImg{
+    width: 20vw;
+    margin-top: -1vw;
+}
+.NewTitle{
+    font-size: 1.2vw;
+    color: #000000;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.NewDes{
+    font-size: 1vw;
+    color: #000000;
+    letter-spacing: 1px;
+    
+    font-weight: 100px;
+    margin-top: 0.4vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.ButtonPulsNew{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8vw 2vw;
+    border: 2px solid #484848;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    font-weight: 700;
+    font-family: 'Raleway';
+    text-decoration: none;
+    margin-top: 11vw;
+    transition: background 0.3s linear, color 0.4s linear;
+    z-index: 10000;
+}
+.ButtonPulsNew:hover {
+    background-color: #484848;
+    color: white;
+    border-color: #e4e4e4;
+}
+.NewsButtonOpen{
+    position: absolute;
+    margin-left: 0px;
+    top: 185vw;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.ButtonNewsAnim {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1vw 2.8vw;
+    border: 3px solid #e7e7e7;
+    color: #e7e7e7;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background-color: rgba(2, 2, 2, 0);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s linear, color 0.4s linear;
+  }
+.ButtonNewsAnim:hover {
+      background-color: #e7e7e7;
+      color: black;
+  }
+.New1{
+    width: 23vw;
+    height: 21vw;
+    text-align: center;
+    border: 20px;
+    border-color: wheat;
+    margin-left: 8.6vw;
+    margin-top: -19vw;
+}
+.New2{
+    width: 23vw;
+    height: 21vw;
+    text-align: center;
+    border: 20px;
+    border-color: wheat;
+    margin-left: 6.5vw;
+    margin-top: -26vw;
+}
+.New3{
+    width: 23vw;
+    height: 21vw;
+    text-align: center;
+    border: 20px;
+    border-color: wheat;
+    margin-left: 6vw;
+    margin-top: -18vw;
+}

@@ -28,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -44,11 +45,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/news/static" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\templates\Config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static" />
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale" />
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\static\css" />
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\static" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
