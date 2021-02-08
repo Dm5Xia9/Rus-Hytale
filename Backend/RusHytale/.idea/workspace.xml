@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -45,18 +45,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/news/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/news/static/css" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\templates\Config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static\css" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\static\css" />
-      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\templates\Config" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,6 +83,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="541" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612790651189">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="541" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1612790651189" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1612335681154">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

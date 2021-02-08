@@ -17,8 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from news import views
+from news.views import e_handler404
 
+handler404 = e_handler404
 urlpatterns = [
     path('', include('news.urls')),
+    path('', include('accounts.urls')),
+    path('', include('play.urls')),
     path('admin/', admin.site.urls),
 ]

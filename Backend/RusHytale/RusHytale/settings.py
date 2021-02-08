@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'news.apps.NewsConfig',
     'accounts.apps.AccountsConfig',
+    'play.apps.PlayConfig',
 ]
 
 MIDDLEWARE = [

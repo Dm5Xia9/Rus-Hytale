@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.template import RequestContext
 from .models import New
 
 
@@ -19,3 +19,8 @@ def deatail(request, new_id):
 def news(request):
      latest_news = New.objects.all()
      return render(request, 'Config/newsConfig.html', {'latest_news': latest_news})
+
+
+
+def e_handler404(request, exception):
+     return render(request, '404.html')
