@@ -49,7 +49,7 @@
 
     transition: color 0.2s linear;
     transition: background-color 0.1s linear;
-    transition: border 0.1s linear;
+    /* transition: border 0.1s linear; */
 }
 
 .button:hover {
