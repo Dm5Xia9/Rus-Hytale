@@ -1,0 +1,4 @@
+404
+auth
+reg
+play
