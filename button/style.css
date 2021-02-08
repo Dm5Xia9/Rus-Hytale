@@ -1,0 +1,38 @@
+
+.rasp {
+    display: flex;
+    margin: 200px auto;
+    max-width: 500px;
+}
+
+.background {
+    width: 150px;
+    height: 100px;
+    background-color: #282828;
+}
+
+.style {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercases;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.background:hover {
+    background-color: rgb(138, 138, 138);
+    color: #333;
+}
+
+.background:hover .style {
+    color: #333;
+}
+
+/* body */
+
+.body_inner {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #fff;
+}

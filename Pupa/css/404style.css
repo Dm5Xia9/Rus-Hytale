@@ -1,0 +1,31 @@
+/* body */
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.body_inner {
+    margin-top: 20%;
+    padding: 2vw 3vw;
+    font-family: 'Kaushan', sans-serif;
+    color: #fff;
+    font-weight: 700;
+
+    text-align: center;
+
+    background-color: #282828;
+    border: 1vw #282828 solid;
+    border-radius: 2.5vw;
+}
+
+.o404 {
+    font-size: 4vw;
+}
+
+.text {
+    font-size: 5vw;
+}
