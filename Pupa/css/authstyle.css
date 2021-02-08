@@ -1,6 +1,6 @@
 /* body */
 
-.container404 {
+.container_auth {
     display: flex;
     margin: 0 auto;
     width: 80%;
@@ -8,39 +8,40 @@
     align-items: center;
 }
 
-.body_inner404 {
+.body_inner_auth {
     margin-top: 20%;
     padding: 2vw 3vw;
     font-family: 'Kaushan', sans-serif;
     color: #fff;
     font-weight: 700;
+    text-transform: uppercase;
 
     /* display: flex;
     flex-direction: column; */
 
     text-align: center;
 
-    background-color: #282828;
+    /* background-color: #282828;
     border: 1vw #282828 solid;
-    border-radius: 2.5vw;
+    border-radius: 2.5vw; */
 }
 
 .o404 {
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 .text {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 .button {
     margin-top: 2.5vw;
     padding: 0.5vw 1.5vw;
-    background-color: #737373;
+    background-color: #8BC34A;
     font-family: 'Kaushan', sans-serif;
     font-size: 1.3vw;
     font-weight: 700;
-    border: 0.2vw #737373 solid;
+    border: 0.2vw #8BC34A solid;
     border-radius: 1vw;
     text-transform: uppercase;
     text-decoration: none;
@@ -52,7 +53,7 @@
     /* transition: border 0.1s linear; */
 }
 
-.button:hover { 
+.button:hover {
     background-color: #fff;
     color: black;
     border: 0.2vw #fff solid;
