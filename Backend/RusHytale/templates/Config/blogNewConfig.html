@@ -1,4 +1,12 @@
 {% extends 'blogNew.html'%}
+{% block title %}
+        <title>{{latest_new.title}}</title>
+        <meta property="og:site_name" content="{{latest_new.title}} | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="{{latest_new.title}} | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="{{latest_new.title}} | Сервера по игре Hytale" />
+		<meta name="Description" content="{{latest_new.text|truncatechars:100}}"/>
+{% endblock %}
 {% block content %}
             <h1 class="title_new">{{latest_new.title}}</h1>
             <div class="ContentBlock">
