@@ -2,8 +2,8 @@
     background-color: rgb(73, 73, 73);
     margin: 0px;
     overflow-x: hidden;
-    min-width: 1170px;
 }
+
 .Content{
     width: 80%;
     margin-left: 10%;
@@ -11,65 +11,104 @@
     position: absolute;
     
 }
-.ContentTitle{
-    margin-top: 7vw;
-    font-size: 3vw;
-    letter-spacing: 1px;
-    font-family: 'Raleway';
-    font-weight: 100px;
-    color:rgb(233, 233, 233);
-}
-.listNews{
+
+.news_content {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 4vw;
+    margin-bottom: 8vw;
 }
-.new{
-    width: 33.33333%;
-    text-align: center;
-    margin: 5vw 0;
-    padding: 0 30px;
-}
-.title_new{
-    font-size: 1.2vw;
-    color: #000000;
-    letter-spacing: 1px;
+
+.news_title {
+    margin-top: 10vw;
+    margin-bottom: 4vw;
+
+    color: #fff;
     font-family: 'Raleway';
-    font-weight: 100px;
-}
-.text_new{
-    font-size: 1vw;
-    color: #000000;
-    letter-spacing: 1px;
-    
-    font-weight: 100px;
-}
-.img_new{
-    width: 20vw;
-}
-.newBack{
-    position: absolute;
-    width: 21vw;
-    z-index: -1;
-    margin-left: -10.5vw;
-    margin-top: -1.7vw;
-}
-.ButtonPulsNew{
-    display: inline-block;
-    vertical-align: top;
-    padding: 0.8vw 2vw;
-    border: 2px solid #484848;
-    color: #000000;
+    font-size: 3.9vw;
+
     text-transform: uppercase;
-    font-size: 1.4vw;
-    font-weight: 700;
-    font-family: 'Raleway';
-    text-decoration: none;
-    margin-top: 11vw;
-    transition: background 0.3s linear, color 0.4s linear;
-    z-index: 10000;
 }
-.ButtonPulsNew:hover {
-    background-color: #484848;
-    color: white;
-    border-color: #e4e4e4;
+
+.news_inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.new_img_div {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 80%;
+}
+
+.new_img {
+    width: 100%;
+    height: 100%;
+    position: inherit;
+
+}
+
+.new_title {
+    font-family: 'Montserrat';
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: left;
+
+    margin: 2vw 0;
+
+    border-bottom: 0.25vw solid #8BC34A;
+}
+
+.new_info {
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    font-size: 2.2vw;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 100%;
+}
+
+.new_after {
+    margin-top: 1vw;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.new_date {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: #8BC34A;
+    font: 1vw;
+    margin-top: 1vw;
+}
+
+.new_open {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    border: 0;
+    padding: 0.4vw 1vw;
+    /* text-transform: uppercase; */
+    color: #fff;
+    font-size: 1.5vw;
+    background-color: #737373;
+    vertical-align: top;
+    cursor: pointer;
+    max-width: 15vw;
+
+    border: 0.1vw #737373 solid;
+    border-radius: 1vw;
+
+    transition: background-color 0.1s linear;
+    transition: color o.1s linear;
+}
+
+.new_open:hover {
+    background-color: #fff;
+    color: #333;
 }
