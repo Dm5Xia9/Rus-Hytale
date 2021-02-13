@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <title>Комплекс серверов Rus-Hytale</title>
         <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
 	    <meta property="og:type" content="website" />
@@ -9,11 +10,11 @@
 		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
 		<link rel="canonical" href="https://rushytale.ru"/>
 	    <meta property="og:url" content="https://rushytale.ru/" />
-        <link href="http://127.0.0.1:8000/static/css/head.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/mainBlock.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/AuthorizationPanel.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/whyBlock.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/newBlock.css" rel="stylesheet">
+        <link href="{% static 'css/head.css' %}" rel="stylesheet">
+        <link href="{% static 'css/mainBlock.css' %}" rel="stylesheet">
+        <link href="{% static 'css/AuthorizationPanel.css' %}" rel="stylesheet">
+        <link href="{% static 'css/whyBlock.css' %}" rel="stylesheet">
+        <link href="{% static 'css/newBlock.css' %}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com/" >
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
@@ -22,24 +23,24 @@
     <body>
         <div class="header">
             <div class="LogoHeader">
-                <a href="http://127.0.0.1:8000"><img class="Logo" src="http://127.0.0.1:8000/static/images/MiniLogo.png"></a>
+                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
             </div>
             <div class="MenuHeader">
-                <a href="http://127.0.0.1:8000"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="http://127.0.0.1:8000/news"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru/"><button  class="ButtonPulsHeader">Форум</button></a>
+                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
+                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
+                <a href="forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
             </div>
 
         </div>
         <div class="MainBlock">
             <div class="imgMainBlock noselect">
                 <div class="BackMain">
-                    <img class="OpBack" src="http://127.0.0.1:8000/static/images/BackMain.jpg">
-                    <img class="OpBackEf1" src="http://127.0.0.1:8000/static/images/EffectMin1.png">
-                    <img class="OpBackEf2" src="http://127.0.0.1:8000/static/images/EffectMax1.png">
+                    <img class="OpBack" src="{% static 'images/BackMain.jpg' %}">
+                    <img class="OpBackEf1" src="{% static 'images/EffectMin1.png' %}">
+                    <img class="OpBackEf2" src="{% static 'images/EffectMax1.png' %}">
                 </div>
                 <div class="MainBlockImg">
-                    <img src="http://127.0.0.1:8000/static/images/LogoMain.png">
+                    <img src="{% static 'images/LogoMain.png' %}">
                 </div>
                 <div class="PlayMenu">
                     <a href="#">
@@ -57,21 +58,21 @@
         </div>
         <div class="NextBlock">
             <div class="imgWhyBlock noselect">
-                <img class="BackWhy" src="http://127.0.0.1:8000/static/images/BackNext.jpg">
-                <img class="BackWhyEf1" src="http://127.0.0.1:8000/static/images/EffectMin2.png">
-                <img class="BackWhyEf2" src="http://127.0.0.1:8000/static/images/EffectMax2.png">
+                <img class="BackWhy" src="{% static 'images/BackNext.jpg' %}">
+                <img class="BackWhyEf1" src="{% static 'images/EffectMin2.png' %}">
+                <img class="BackWhyEf2" src="{% static 'images/EffectMax2.png' %}">
             </div>
             <div class="features">
                 <div class="features__item">
-                    <img src="http://127.0.0.1:8000/static/images/Why1.png" class="features__icon">
+                    <img src="{% static 'images/Why1.png' %}" class="features__icon">
                     <h4 class="features__title">Развивающееся комьюнити</h4>
                 </div>
                 <div class="features__item">
-                    <img src="http://127.0.0.1:8000/static/images/Why2.png" class="features__icon">
+                    <img src="{% static 'images/Why2.png' %}" class="features__icon">
                     <h4 class="features__title">Справедливая администрация</h4>
                 </div>
                 <div class="features__item">
-                    <img src="http://127.0.0.1:8000/static/images/Why3.png" class="features__icon">
+                    <img src="{% static 'images/Why3.png' %}" class="features__icon">
                     <h4 class="features__title">Регулярные ивенты</h4>
                 </div>
             </div>
@@ -92,10 +93,10 @@
             </div>
 
         </div>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/jquery.js"></script>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/ButtonPuls.js"></script>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/Scroll.js"></script>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/parallax.js"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
     </body>
 
 </html>

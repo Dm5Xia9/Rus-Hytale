@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <title>Играть</title>
         <meta property="og:site_name" content="Играть | Сервера по игре Hytale" />
 	    <meta property="og:type" content="website" />
@@ -9,9 +10,9 @@
 		<meta name="Description" content="Играть на серверах Rus-Hytale бесплатно"/>
 		<link rel="canonical" href="https://rushytale.ru/play"/>
 	    <meta property="og:url" content="https://rushytale.ru/play"/>
-        <link href="http://127.0.0.1:8000/static/css/head.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/newMainBlock.css" rel="stylesheet">
-        <link href="http://127.0.0.1:8000/static/css/playstyle.css" rel="stylesheet">
+        <link href="{% static 'css/head.css' %}" rel="stylesheet">
+        <link href="{% static 'css/newMainBlock.css' %}" rel="stylesheet">
+        <link href="{% static 'css/playstyle.css' %}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com/" >
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
@@ -20,13 +21,12 @@
         <!-- header -->
         <div class="header">
             <div class="LogoHeader">
-                <img class="Logo" src="http://127.0.0.1:8000/static/images/MiniLogo.png">
+                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
             </div>
             <div class="MenuHeader">
-                <a href="#"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="#"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="#"><button  class="ButtonPulsHeader">Серверы</button></a>
-                <a href="#"><button  class="ButtonPulsHeader">Форум</button></a>
+                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
+                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
+                <a href="forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
             </div>
         </div>
         <!-- header -->
@@ -43,8 +43,8 @@
             </div>
         </div>
         <!-- body -->
-	<script type="text/javascript" src="http://127.0.0.1:8000/static/js/jquery.js"></script>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/ButtonPuls.js"></script>
-        <script type="text/javascript" src="http://127.0.0.1:8000/static/js/Scroll.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
     </body>
 </html>
