@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% load static %}
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
         <title>404</title>
         <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/newMainBlock.css' %}" rel="stylesheet">
         <link href="{% static 'css/404style.css' %}" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" >
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    </head>
+{% endblock %}
+{% block body %}
     <body class="bodyStyle">
         <!-- header -->
         <div class="header">
@@ -39,4 +36,4 @@
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
     </body>
-</html>
+{% endblock %}

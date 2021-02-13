@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% load static %}
-        <title>Играть</title>
-        <meta property="og:site_name" content="Играть | Сервера по игре Hytale" />
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Вход</title>
+        <meta property="og:site_name" content="Вход | Сервера по игре Hytale" />
 	    <meta property="og:type" content="website" />
-		<meta property="og:title" content="Играть | Сервера по игре Hytale" />
-		<meta property="twitter:title" content="Играть | Сервера по игре Hytale" />
-		<meta name="Description" content="Играть на серверах Rus-Hytale бесплатно"/>
-		<link rel="canonical" href="https://rushytale.ru/play"/>
-	    <meta property="og:url" content="https://rushytale.ru/play"/>
+		<meta property="og:title" content="Вход | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Вход | Сервера по игре Hytale" />
+		<meta name="Description" content="Войти в свой профиль Rus-Hytale"/>
         <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/newMainBlock.css' %}" rel="stylesheet">
-        <link href="{% static 'css/playstyle.css' %}" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" >
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    </head>
+        <link href="{% static 'css/authstyle.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
     <body class="bodyStyle">
         <!-- header -->
         <div class="header">
@@ -31,10 +26,10 @@
         </div>
         <!-- header -->
         <!-- body -->
-        <div class="container_play">
-            <div class="body_inner_play">
-                <div class="o404">игра еще не вышла</div>
-                <div class="text">ждем вместе!</div>
+        <div class="container_auth">
+            <div class="body_inner_auth">
+                <div class="o404">пока тут ничего нет</div>
+                <div class="text">но мы работаем над этим!</div>
                 <a href="https://discord.gg/F86RGWhvdU" target="_blank">
                     <button class="button" type="button">
                         следить за новостями
@@ -43,8 +38,8 @@
             </div>
         </div>
         <!-- body -->
-	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
     </body>
-</html>
+{% endblock %}

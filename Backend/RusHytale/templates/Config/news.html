@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% load static %}
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
         <title>Новости</title>
         <meta property="og:site_name" content="Новости | Сервера по игре Hytale" />
 	    <meta property="og:type" content="website" />
 		<meta property="og:title" content="Новости | Сервера по игре Hytale" />
 		<meta property="twitter:title" content="Новости | Сервера по игре Hytale" />
 		<meta name="Description" content="Новости Rus-Hytale"/>
-		<link rel="canonical" href="https://rushytale.ru/news"/>
-	    <meta property="og:url" content="https://rushytale.ru/news"/>
+        <link rel="canonical" href="{% url 'news:news'%}"/>
+	    <meta property="og:url" content="{% url 'news:news'%}"/>
         <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/listNews.css' %}" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" >
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    </head>
+{% endblock %}
+{% block body %}
     <body class="bodyStyle">
         <div class="header">
             <div class="LogoHeader">
@@ -29,10 +26,28 @@
         </div>
         <div class="Content">
             <h1 class="news_title">Новости</h1>
-            {% block content %}{% endblock %}
+{% for latest in latest_news %}
+            <div class="news_content">
+                <div class="news_inner">
+                    <div class="new_img_div">
+                        <img class="new_img" src="/static/{{ latest.new_img.name }}" alt="">
+                    </div>
+                    <div class="new_title">
+                        {{latest.title}}
+                    </div>
+                    <div class="new_info">
+                        {{latest.text_mini}}
+                    </div>
+                    <div class="new_after">
+                        <a href="{% url 'news:deatail' latest.id %}"><button class="new_open" type="button">Читать далее</button></a>
+                        <div class="new_date">11.02.2021</div>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
         </div>
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
     </body>
-</html>
+{% endblock %}
