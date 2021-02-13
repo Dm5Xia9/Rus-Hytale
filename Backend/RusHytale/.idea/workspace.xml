@@ -45,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/news/static/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/news/static" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -53,8 +53,8 @@
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static\css" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static" />
+      <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news\static\css" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\news" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale" />
       <recent name="C:\Users\stepa\OneDrive\Документы\GitHub\Rus-Hytale\Backend\RusHytale\static\css" />
