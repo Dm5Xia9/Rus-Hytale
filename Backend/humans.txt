@@ -1,0 +1,11 @@
+/* TEAM */
+	backend && frontend developer, SEO, project manager, administrator, owner: Dmitry Stepanov
+	contact: rushytale.ru
+	vk: dima5x9
+	discord: Dima5#4478
+	From: Russia, Yekaterinburg
+/* SITE */
+	Last update:XX.02.2021
+	Language: Russian
+	Doctype:HTML5
+	IDE: Photoshop, PyCharm, VS Code, notepad++
