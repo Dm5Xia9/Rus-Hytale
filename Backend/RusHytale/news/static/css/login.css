@@ -1,0 +1,71 @@
+.TitleLogIn{
+    margin-left: 0.3vw;
+    font-size: 2.5vw;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.AuthBody{
+    background: rgb(73, 73, 73);
+    margin: 0px;
+}
+.AuthBlock{
+    position: absolute;
+    margin-left: 0px;
+    top: 20vw;
+    left: 46%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.ButtonNewsAnim {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8vw 2.8vw;
+    border: 3px solid #e7e7e7;
+    color: #e7e7e7;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background-color: rgba(2, 2, 2, 0);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s linear, color 0.4s linear;
+  }
+.ButtonNewsAnim:hover {
+      background-color: #e7e7e7;
+      color: black;
+  }
+.formLogin{
+    font-size: 1vw;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.formLogin input{
+    width: 10vw;
+    height: 1.5vw;
+}
+.regText{
+    margin-top: 1vw;
+    font-size: 0.7vw;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+}
+.aRegText{
+    color: #8BC34A;
+}
+.aRegText:active {
+    color: #8BC34A;
+   }

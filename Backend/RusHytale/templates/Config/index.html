@@ -44,11 +44,18 @@
                       </a>
                 </div>
                 <div class="Authorization">
+                    {% if user.is_authenticated %}
+                        <div class="InputText">
+                            <h3>Привет, {{ user.username }}!</h3>
+                            <p><a class="logOut" href="{% url 'logout' %}">Выйти</a></p>
+                        </div>
+                    {% else %}
                     <div class="InputText">
                         <h3>Войти в профиль</h3>
                     </div>
-                    <a href="{% url 'accounts:auth'%}" class="auth">Вход</a>
-                    <a href="{% url 'accounts:auth'%}" class="reg">Регистрация</a>
+                        <a href="{% url 'login'%}" class="auth">Вход</a>
+                        <a href="{% url 'accounts:reg'%}" class="reg">Регистрация</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -86,48 +93,58 @@
             </div>
             <div class="NewBlock">
 {% if num == 1 %}
-                <div class="New1">
+                <div class="New">
                     <h4 class="NewTitle">{{cont1.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont1.new_img.name }}">
-                    <h5 class="NewDes">{{cont1.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont1.text_mini|truncatechars:220}}</h5>
                 </div>
 {% elif num == 2 %}
-                <div class="New1">
+                <div class="New">
                     <h4 class="NewTitle">{{cont1.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont1.new_img.name }}">
-                    <h5 class="NewDes">{{cont1.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont1.text_mini|truncatechars:220}}</h5>
                 </div>
-                <div class="New2">
+                <div class="New">
                     <h4 class="NewTitle">{{cont2.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont2.new_img.name }}">
-                    <h5 class="NewDes">{{cont2.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont2.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont2.text_mini|truncatechars:220}}</h5>
                 </div>
 {% elif num == 3 %}
-                <div class="New1">
+                <div class="New">
                     <h4 class="NewTitle">{{cont1.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont1.new_img.name }}">
-                    <h5 class="NewDes">{{cont1.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont1.text_mini|truncatechars:220}}</h5>
                 </div>
-                <div class="New2">
+                <div class="New">
                     <h4 class="NewTitle">{{cont2.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont2.new_img.name }}">
-                    <h5 class="NewDes">{{cont2.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont2.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont2.text_mini|truncatechars:220}}</h5>
                 </div>
-                <div class="New3">
+                <div class="New">
                     <h4 class="NewTitle">{{cont3.title}}</h4>
                     <img class="NewImg" src="/static/{{ cont3.new_img.name }}">
-                    <h5 class="NewDes">{{cont3.text|truncatechars:200}}</h5>
-                    <a href="{% url 'news:deatail' cont3.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                    <h5 class="NewDes">{{cont3.text_mini|truncatechars:220}}</h5>
                 </div>
 {% else %}
 {% endif%}
             </div>
-
+{% if num == 1 %}
+            <div class="ButtonBlock">
+                <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+            </div>
+{% elif num == 2 %}
+            <div class="ButtonBlock">
+                <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                <a href="{% url 'news:deatail' cont2.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+            </div>
+{% elif num == 3 %}
+            <div class="ButtonBlock">
+                <a href="{% url 'news:deatail' cont1.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                <a href="{% url 'news:deatail' cont2.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+                <a href="{% url 'news:deatail' cont3.id %}"><button class="ButtonPulsNew">Подробнее</button></a>
+            </div>
+{% else %}
+{% endif%}
         </div>
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
