@@ -19,7 +19,7 @@
             <div class="MenuHeader">
                 <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
                 <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
+                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
             </div>
         </div>
         <div class="newMainBlock">
@@ -27,8 +27,8 @@
             <div class="ContentBlock">
                 <img class="img_new" src="/static/{{ latest_new.new_img.name }}">
             </div>
-            <div class="TextBlock">
-                <h2 class="Text">{{latest_new.text}}</h2>
+            <div class="TextBlock Text" >
+                {{latest_new.text|safe}}
             </div>
         </div>
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>

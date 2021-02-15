@@ -3,7 +3,7 @@ body{
     background: rgb(73, 73, 73);
     margin: 0px;
     overflow-x: hidden;
-    min-width: 1170px;
+    min-width: 100%;
 }
 .MainBlock{
     width: 100%;

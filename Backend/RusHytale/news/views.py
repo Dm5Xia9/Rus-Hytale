@@ -18,6 +18,7 @@ def deatail(request, new_id):
     return render(request, 'Config/new.html', {'latest_new': latest_new})
 def news(request):
      latest_news = New.objects.all()
+     latest_news = latest_news[::-1]
      return render(request, 'Config/news.html', {'latest_news': latest_news})
 
 
