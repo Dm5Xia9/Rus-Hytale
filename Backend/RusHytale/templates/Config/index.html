@@ -9,25 +9,12 @@
 		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
 		<link rel="canonical" href="{% url 'news:home'%}"/>
 	    <meta property="og:url" content="{% url 'news:home'%}"/>
-        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/mainBlock.css' %}" rel="stylesheet">
         <link href="{% static 'css/AuthorizationPanel.css' %}" rel="stylesheet">
         <link href="{% static 'css/whyBlock.css' %}" rel="stylesheet">
         <link href="{% static 'css/newBlock.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body>
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
-
-        </div>
         <div class="MainBlock">
             <div class="imgMainBlock noselect">
                 <div class="BackMain">
@@ -150,5 +137,4 @@
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
-    </body>
 {% endblock %}

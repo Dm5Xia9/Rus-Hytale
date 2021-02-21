@@ -7,20 +7,9 @@
 		<meta property="og:title" content="Регистрация | Сервера по игре Hytale" />
 		<meta property="twitter:title" content="Регистрация | Сервера по игре Hytale" />
 		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
-        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/login.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body class="AuthBody">
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
         <div class="AuthBlock">
             <div class="TitleLogIn">Регистрация</div>
             <form method="post" class="formLogin">
@@ -30,6 +19,4 @@
             </form>
             <div class="regText">Есть аккаунт? <a href="#" class="aRegText">Войти</a></div>
         </div>
-        </div>
-    </body>
 {% endblock %}

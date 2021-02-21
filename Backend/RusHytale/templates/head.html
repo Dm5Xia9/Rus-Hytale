@@ -22,11 +22,28 @@
 		<link rel="icon" type="image/ico" sizes="16x16" href="{% static 'icons/favicon.ico' %}">
 		<link rel="icon" type="image/ico" sizes="48x48" href="{% static 'icons/favicon.ico' %}">
 		<link rel="manifest" href="{% static 'icons/manifest.json' %}">
+        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         {% block title %}{% endblock %}
         <link rel="preconnect" href="https://fonts.gstatic.com/" >
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1" >
     </head>
-{% block body %}{% endblock %}
+    <body>
+        <div class="header">
+            <div class="LogoHeader">
+                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
+            </div>
+            <div class="MenuHeader">
+                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
+                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
+                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
+                {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:prof' UserProfile.identifier %}"><button  class="ButtonPulsHeader">{{ user.username }}</button></a>
+                {% endif %}
+            </div>
+
+        </div>
+    {% block body %}{% endblock %}
+    </body>
 </html>

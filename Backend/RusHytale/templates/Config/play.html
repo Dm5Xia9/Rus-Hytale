@@ -9,24 +9,10 @@
 		<meta name="Description" content="Играть на серверах Rus-Hytale бесплатно"/>
 		<link rel="canonical" href="https://rushytale.ru/play"/>
 	    <meta property="og:url" content="https://rushytale.ru/play"/>
-        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/newMainBlock.css' %}" rel="stylesheet">
         <link href="{% static 'css/playstyle.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body class="bodyStyle">
-        <!-- header -->
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
-        </div>
-        <!-- header -->
         <!-- body -->
         <div class="container_play">
             <div class="body_inner_play">
@@ -43,5 +29,4 @@
 	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
-    </body>
 {% endblock %}

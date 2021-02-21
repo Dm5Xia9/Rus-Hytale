@@ -86,3 +86,9 @@
 h2{
     font-size: 1000px;;
 }
+.ava{
+    position: relative;
+    overflow: hidden;
+    width: 2.5vw;
+    border-radius: 100%;
+}

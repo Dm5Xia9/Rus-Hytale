@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.category',
             ],
         },
     },
@@ -136,3 +137,5 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/news/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'news/static')
+DATE_INPUT_FORMATS = ('%d-%m-%Y')
+USE_L10N = True

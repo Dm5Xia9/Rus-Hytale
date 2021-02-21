@@ -7,18 +7,6 @@
         <link href="{% static 'css/404style.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body class="bodyStyle">
-        <!-- header -->
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
-        </div>
         <!-- header -->
         <!-- body -->
         <div class="container404">
@@ -35,5 +23,4 @@
 	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
-    </body>
 {% endblock %}

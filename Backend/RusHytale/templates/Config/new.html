@@ -7,21 +7,9 @@
 		<meta property="og:title" content="{{latest_new.title}} | Сервера по игре Hytale" />
 		<meta property="twitter:title" content="{{latest_new.title}} | Сервера по игре Hytale" />
 		<meta name="Description" content="{{latest_new.text|truncatechars:100}}"/>
-        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/newMainBlock.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body class="bodyStyle">
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
-        </div>
         <div class="newMainBlock">
             <h1 class="title_new">{{latest_new.title}}</h1>
             <div class="ContentBlock">
@@ -34,5 +22,4 @@
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
-    </body>
 {% endblock %}

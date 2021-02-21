@@ -1,0 +1,105 @@
+body{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+}
+.content{
+    width: 80%;
+    margin-left: 10%;
+    position: absolute;
+}
+.TitleSett{
+    margin-top: 5vw;
+    font-size: 3vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    color:rgb(233, 233, 233);
+    padding-bottom: 1vw;
+    border-bottom: 0.25vw solid #8BC34A;
+    text-align: center;
+    
+}
+.ListSettings{
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    color:rgb(233, 233, 233);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.TitleParams{
+    text-align: center;
+}
+.TitleParams b{
+    font-size: 1.5vw;
+}
+
+.Settings{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 0.1vw solid #e7e7e7;
+}
+.setting{
+    width: 50%;
+}
+.setting b{
+    margin-left: 2vw;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100;
+}
+.setting a{
+    margin-left: 2vw;
+    font-size: 0.6vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #8BC34A;
+}
+.setting input{
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    float: right;
+}
+.setting select{
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    float: right;
+}
+.SecretInfo{
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    float: right;
+}
+.ButtonNewsAnim {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8vw 2.8vw;
+    border: 3px solid #e7e7e7;
+    color: #e7e7e7;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background-color: rgba(2, 2, 2, 0);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s linear, color 0.4s linear;
+}
+.ButtonNewsAnim:hover{
+    background-color: #e7e7e7;
+    color: black;
+}
+.Button{
+    margin-left: 42%;
+}

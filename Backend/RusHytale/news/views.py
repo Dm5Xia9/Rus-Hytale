@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from .models import New
-
+from accounts.models import UserProfile
 
 def index(request):
-     latest_new_list = New.objects.all()[:3]
+     latest_new_list = New.objects.all()[len(New.objects.all()) - 3:len(New.objects.all())]
      if len(latest_new_list) == 1:
           return render(request, 'Config/index.html', {'num': 1, 'cont1': latest_new_list[0]})
      elif len(latest_new_list) == 2:

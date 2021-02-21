@@ -9,21 +9,9 @@
 		<meta name="Description" content="Новости Rus-Hytale"/>
         <link rel="canonical" href="{% url 'news:news'%}"/>
 	    <meta property="og:url" content="{% url 'news:news'%}"/>
-        <link href="{% static 'css/head.css' %}" rel="stylesheet">
         <link href="{% static 'css/listNews.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <body class="bodyStyle">
-        <div class="header">
-            <div class="LogoHeader">
-                <a href="{% url 'news:home'%}"><img class="Logo" src="{% static 'images/MiniLogo.png' %}"></a>
-            </div>
-            <div class="MenuHeader">
-                <a href="{% url 'news:home'%}"><button  class="ButtonPulsHeader">Главная</button></a>
-                <a href="{% url 'news:news'%}"><button  class="ButtonPulsHeader">Новости</button></a>
-                <a href="https://forum.rushytale.ru"><button  class="ButtonPulsHeader">Форум</button></a>
-            </div>
-        </div>
         <div class="Content">
             <h1 class="news_title">Новости</h1>
 {% for latest in latest_news %}
@@ -49,5 +37,4 @@
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
-    </body>
 {% endblock %}
