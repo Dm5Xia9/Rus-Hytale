@@ -1,0 +1,39 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/account.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+        <div class="AccountInfoBlock">
+            <div class="MainInfo">
+                <div class="avaAccount"></div>
+                <div class="userinfo">
+                    <div class="username">
+                        {{User.username}}
+                    </div>
+                    <div class="Group">
+                        Новичок
+                    </div>
+                </div>
+            </div>
+{% if user.is_authenticated %}
+{% if user.id == User.id%}
+            <div class="ButtonsBlock">
+                <a href="{% url 'accounts:settings' %}"><button class="ButtonNewsAnim">Настройки</button></a>
+            </div>
+{% endif %}
+{% endif %}
+        </div>
+        <div class="wall">
+            <div class="err">Пока тут ничего нету...</div>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/ButtonPuls.js"></script>
+        <script type="text/javascript" src="js/Scroll.js"></script>
+{% endblock %}

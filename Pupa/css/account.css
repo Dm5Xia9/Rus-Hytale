@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.AccountInfoBlock{
+    margin-left: 10%;
+    position: absolute;
+    display: flex;
+}
+.MainInfo{
+    width: 69vw;
+    margin-top: 6vw;
+    height: 15vw;
+    display: flex;
+}
+.avaAccount{
+    width: 15vw;
+    height: 15vw;
+    background-color: rgb(88, 88, 88);
+    border-right: 0.15vw solid #8BC34A;
+    border-left: 0.1vw solid rgb(233, 233, 233);
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.username{
+    height: 3vw;
+    font-size: 2vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    color:rgb(233, 233, 233);
+    border-bottom: 0.15vw solid #8BC34A;
+}
+.Group{
+    padding-top: 0.4vw;
+    font-size: 1.2vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    color:rgb(233, 233, 233);
+}
+.userinfo{
+    margin-left: 1.5vw;
+    margin-top: 2.5vw;
+}
+.ButtonsBlock{
+    margin-top: 6vw;
+}
+.ButtonNewsAnim {
+    margin-top: 2.5vw;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8vw 1.8vw;
+    border: 0.2vw solid #e7e7e7;
+    color: #e7e7e7;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background-color: rgba(2, 2, 2, 0);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s linear, color 0.4s linear;
+}
+.ButtonNewsAnim:hover{
+    background-color: #e7e7e7;
+    color: black;
+}
+.wall{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 23%;
+    height: 54%;
+    background-color: #5e5e5e;
+    position: absolute;
+    text-align: center;
+}
+.err{
+    margin-top: 10vw;
+    font-size: 3vw;
+    letter-spacing: 1px;
+    font-family: 'Raleway';
+    font-weight: 100px;
+    color:rgb(233, 233, 233);
+}

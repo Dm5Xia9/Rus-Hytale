@@ -20,7 +20,7 @@
                 <div class="Settings">
                     <p class="setting">
                         <b>Ник</b>
-                        <input type="text" name="username" id="id_username" value="{{user.username|default:''}}">
+                        <input type="text" name="username" id="id_username" value="{{User.username|default:''}}">
                     </p>
                     <p class="setting">
                         <b>Идентификатор</b>
@@ -34,22 +34,22 @@
                     <p class="setting">
                         <b>Пароль</b>
                         <b class="SecretInfo">******************</b>
-                        <Br><a href="#">Изменить?</a>
+<!--                        <Br><a href="#">Изменить?</a>-->
                     </p>
                 </div>
                 <p class="TitleParams"><b>Персональная информация</b></p>
                 <div class="Settings">
                     <p class="setting">
                         <b>Имя</b>
-                        <input type="text" name="first_name" id="id_first_name" value="{{user.first_name|default:''}}">
+                        <input type="text" name="first_name" id="id_first_name" value="{{User.first_name|default:''}}">
                     </p>
                     <p class="setting">
                         <b>Фамилия</b>
-                        <input type="text" name="last_name" id="id_last_name" value="{{user.last_name|default:''}}">
+                        <input type="text" name="last_name" id="id_last_name" value="{{User.last_name|default:''}}">
                     </p>
                     <p class="setting">
                         <b>Дата рождения</b>
-                        <input type="date" name="DateBirth" id="id_DateBirth" value="{{UserDop.DateBirth|date:'Y-m-d'}}">
+                        <input type="date" required name="DateBirth" id="id_DateBirth" value="{{UserDop.DateBirth|date:'Y-m-d'}}">
                     </p>
                     <p class="setting">
                         <b>Город</b>
@@ -92,4 +92,7 @@
                 <p class="Button"><button type="submit" class="ButtonNewsAnim">Сохранить</button></p>
             </form>
         </div>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
 {% endblock %}

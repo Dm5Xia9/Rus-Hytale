@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -22,19 +22,7 @@ class SignUpView(generic.CreateView):
 def prof(request, identifier):
     AccSettModelDop = UserProfile.objects.get(identifier = identifier)
     AccSettModel = User.objects.get(id=AccSettModelDop.id)
-    if request.method == "POST":
-        AccSettModel.username = request.POST.get("username")
-        AccSettModel.first_name = request.POST.get("first_name")
-        AccSettModel.last_name = request.POST.get("last_name")
-        AccSettModelDop.identifier = request.POST.get("identifier")
-        AccSettModelDop.city = request.POST.get("city")
-        AccSettModelDop.telephone = request.POST.get("telephone")
-        AccSettModelDop.DateBirth = request.POST.get("DateBirth")
-        AccSettModelDop.save()
-        AccSettModel.save()
-        return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop})
-    else:
-        return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop})
+    return render(request, 'Config/account.html', {'UserDop': AccSettModelDop, 'User':AccSettModel})
 def settings(request):
     if request.user.is_authenticated:
         AccSettModel = User.objects.get(id=request.user.id)
@@ -43,14 +31,16 @@ def settings(request):
             AccSettModel.username = request.POST.get("username")
             AccSettModel.first_name = request.POST.get("first_name")
             AccSettModel.last_name = request.POST.get("last_name")
-            AccSettModelDop.identifier = request.POST.get("identifier")
+            if UserProfile.objects.filter(identifier=request.POST.get("identifier")).exists() == False and request.POST.get("identifier") != 'settings':
+                AccSettModelDop.identifier = request.POST.get("identifier")
             AccSettModelDop.city = request.POST.get("city")
             AccSettModelDop.telephone = request.POST.get("telephone")
             AccSettModelDop.DateBirth = request.POST.get("DateBirth")
             AccSettModelDop.save()
             AccSettModel.save()
-            return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop})
+            return redirect('/accounts/'+ AccSettModelDop.identifier +'/')
+            #return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop, 'User': AccSettModel})
         else:
-            return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop})
+            return render(request, 'Config/AccSettings.html', {'UserDop': AccSettModelDop, 'User': AccSettModel})
     else:
         return render(request, 'Config/404.html')
