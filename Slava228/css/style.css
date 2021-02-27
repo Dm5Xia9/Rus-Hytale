@@ -144,25 +144,7 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
 }
 
-.main_button {
-    font-family: 'Roboto', sans-serif;
-    background-color: #d1aa1c;
-    color: #282828;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    border: 2px solid #d1aa1c;
-    border-radius: 10px;
 
-    transition: background-color 0.1s linear;
-}
-
-.main_button:hover {
-    background-color: #f0d164;
-    border: 2px solid #f0d164;
-}
 
 /* why_us */
 
@@ -259,6 +241,61 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.price_iPhone {
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.other_phones {
+    display: flex;
+    margin: 15px 30px;
+    flex-direction: column;
+}
+
+.other_phones2 {
+    /* margin-left: 30px; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.other_phones_number {
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main_button2 {
+    /* margin-left: 25px; */
+    margin-top: 15px;
+    max-width: 162px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d1aa1c;
+    color: #282828;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: 2px solid #927c2b;
+    border-radius: 10px;
+
+    transition: background-color 0.1s linear;
+}
+
+.main_button2:hover {
+    background-color: #f0d164;
+    border: 2px solid #f0d164;
+}
+
+
 
 .price_inner {
     margin-left: 30px;
