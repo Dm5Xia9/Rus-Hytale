@@ -125,6 +125,29 @@ h1,h2,h3,h4,h5,h6 {
     text-align: left;
 }
 
+.main_button {
+    /* margin-left: 25px; */
+    margin-top: 15px;
+    max-width: 162px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d1aa1c;
+    color: #282828;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: 2px solid #d1aa1c;
+    border-radius: 10px;
+
+    transition: background-color 0.1s linear;
+}
+
+.main_button:hover {
+    background-color: #f0d164;
+    border: 2px solid #f0d164;
+}
+
 .intro_title:after {
     content: "";
     display: block;
