@@ -1,0 +1,30 @@
+.link {color:#fff; text-decoration:none}
+.link:hover {color:#fff; text-decoration:underline}  
+#mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    opacity: 0;
+    display:none;
+    }
+#boxes{
+    font-family: 'Raleway';
+}
+#boxes #dialog {
+    display: none;
+    overflow: hidden;
+    position:absolute;
+    z-index:9999;
+    width:80%; 
+    height:80%;
+    padding:10px;
+    background-color:rgb(95, 95, 95);
+    }  
+.close {
+    float:right;
+    }
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}

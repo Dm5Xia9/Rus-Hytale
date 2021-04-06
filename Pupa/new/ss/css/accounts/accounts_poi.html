@@ -1,0 +1,75 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Пользователи</title>
+        <meta property="og:site_name" content="Пользователи | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Пользователи | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Пользователи | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/tapeHead.css' %}" rel="stylesheet">
+        <link href="{% static 'css/accounts.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+        <div class="tapeHead">
+            <a href="{% url 'news:home'%}"><div class="Button_tapeHead">
+                Главная
+            </div></a>
+            <a href="{% url 'articles:articles'%}"><div class="Button_tapeHead">
+                Статьи
+            </div></a>
+            <a href="{% url 'news:news'%}"><div class="Button_tapeHead">
+                Новости
+            </div></a>
+            <a href="{% url 'accounts:accs'%}"><div class="Button_tapeHead active_tapeHead">
+                Пользователи
+            </div></a>
+            <div class="rightHead">
+                <div class="User_Article">
+                    {% if user.is_authenticated %}
+                    <img class="User_ava_Article" src="/media/{{ user.avatar }}">
+                    <a href="{% url 'accounts:prof' User.identifier %}"><div class="Username_Article">{{user.username}}</div></a>
+                    <a href="{% url 'logout' %}"><div class="OutButt">Выход</div></a>
+                    {% else %}
+                    <div class="AuthorizationUIMenu">
+                        <a href="{% url 'login' %}"><div class="GoButt">Вход</div></a>
+                        <a href="{% url 'accounts:reg' %}"><div class="GoButt">Регистрация</div></a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="left_menu">
+            <div class="titleButtins">
+                Пользователи
+            </div>
+            <a href="{% url 'accounts:accs'%}"><div class="Button_accounts_statistics">
+                Обзор
+            </div></a>
+            <a href="{% url 'accounts:accs'%}?messages_count=10"><div class="Button_accounts_statistics">
+                Больше всего сообщений
+            </div></a>
+            <a href="{% url 'accounts:accs'%}?Points=10"><div class="Button_accounts_statistics active">
+                Больше всех баллов
+            </div></a>
+            <a href="#"><div class="Button_accounts_statistics">
+                Все пользователи
+            </div></a>
+        </div>
+        <div class="right_line"></div>
+       <div class="accounts_content">
+            <div class="messages_accounts">
+                {% for latest in Users_Points %}
+                <a href="{% url 'accounts:prof' latest.identifier %}"><div class="account_mes">
+                    <img class="avaAccount_Big"  src="/media/{{ latest.avatar }}">
+                    <div class="username_Big">{{latest.username}}</div>
+                    <div class="number_Big">{{latest.Points}}</div>
+                </div></a>
+                {% endfor %}
+            </div>
+            <div class="messages_accounts_end"><div class="end_border"></div></div>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/ButtonPuls.js"></script>
+        <script type="text/javascript" src="js/Scroll.js"></script>
+{% endblock %}

@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Raleway';
+}
+body{
+    background-color: rgb(80, 80, 80);
+    margin: 0;
+}
+a{
+    text-decoration:none;
+}
+.header{
+    background-color: rgb(73, 73, 73);
+    width: 100%;
+    height: 50px;
+}
+.logo{
+    height: 50px;
+    padding: 3px;
+    padding-right: 20px;
+}
+.base_menu_hide{
+    border-bottom:1px solid rgb(88, 88, 88);
+    padding-left: 15px;
+    font-size: 20px;
+}
+.container{
+    margin: 0 auto;
+    width: 75%;
+}
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.left_block{
+    display: flex;
+    align-items: center;
+}
+.main_news{
+    display: inline-block;
+}
+.main_new{
+    font-size: 16px;
+    color: rgb(139, 195, 74);
+    display: inline-block;
+}
+.button_header{
+    font-size: 14px;
+    padding: 3px 12px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 3px;
+    color: rgb(216, 216, 216);
+}
+.button_header:hover{
+    border: 1px solid rgb(139, 195, 74);
+}
+.m_menu{
+    cursor: pointer;
+    border-radius: 6px;
+    display: none;
+}
+.m_menu:hover{
+    background-color: rgb(77, 77, 77);
+}
+.m_menu div{
+    width: 33px;
+    height: 4px;
+    background-color: rgb(216, 216, 216);
+    display: block;
+    margin: 5px 5px;
+    transition: all .3s ease-in-out;
+}
+.menu-hide{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    left: -110%;
+    transition: all .2s ease-in-out;
+    background-color: rgb(73, 73, 73);
+  }/*end of menu-hide*/
+  .menu-hide.show{
+    background-color: rgb(73, 73, 73);
+    left: 0%;
+    transition: all .2s ease-in-out;
+  }
+  .menu-hide nav ul a li{
+    font-size: 17px;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    height: 40px;
+    list-style-type: none;
+    text-align: left;
+    transition: all .4s ease;
+    background-color: rgb(73, 73, 73);
+    padding: 5px;
+    padding-left: 25px;
+}
+.menu-hide nav ul{
+  margin-top: 0px;
+  padding: 0px;
+}
+.menu-hide nav ul a{
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+    font-weight: 800;
+    font-size: 16px;
+    
+}
+.menu-hide nav ul li{
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+    font-weight: 800;
+    font-size: 18px;
+    padding: 5px;
+    padding-left: 15px;
+}
+.active{
+    left: 345px;
+    transition: all 500ms ease-in-out;
+    background-color: rgba(255,255,255,0.2);
+  }
+  .active #one{
+      transform: translateY(9px) rotate(-135deg);
+      transition: all .3s ease-in-out;
+      background-color: rgb(216, 216, 216);
+    }
+    
+  .active #two{
+      opacity: 0;
+      transition: .2s ease;
+    }
+    
+  .active #three{
+      transform: translateY(-9px) rotate(-45deg);
+      transition: all .3s ease-in-out;
+      background-color: rgb(216, 216, 216);
+      
+    }
+.right_block_m{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.ava_user_header_m{
+    border-radius: 100%;
+    border: 2px solid rgb(216, 216, 216);
+    height: 45px;
+    
+}
+.messages_user_header_m{
+    padding-right: 10px;
+    height: 30px;
+}
+.messages_count_header_m{
+    font-size: 20px;
+    color: rgb(211, 38, 38);
+    padding-right: 5px;
+}
+.under_header{
+    background-color: rgb(95, 95, 95);
+    width: 100%;
+    height: 40px;
+}
+.container_under_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.left_block_under_header{
+    display: flex;
+    align-items: center;
+}
+.item_menu_under_header{
+    padding: 7px 7px;
+    font-size: 22px;
+    color: rgb(216, 216, 216);
+}
+.item_menu_under_header:hover{
+    background-color: rgb(100, 100, 100);
+}
+.active_under_item{
+    border-bottom: 1px solid rgb(139, 195, 74);
+}
+.content_main{
+    display: flex;
+    width: 100%;
+    
+    margin-top: 20px;
+}
+.left_panel_content_main{
+    width: 20%;
+    background-color: rgb(100, 100, 100);
+    height: 100%;
+}
+.item_left_panel_content_main{
+    font-size: 20px;
+    color: rgb(216, 216, 216);
+    width: 100%;
+    padding: 10px;
+}
+.item_left_panel_content_main:hover{
+    background-color: rgb(105, 105, 105);
+}
+.active_item_left_panel_content_main{
+    border-left: 1px solid rgb(139, 195, 74);
+}
+.Logo_project_left_panel{
+    width: 80%;
+    padding-top: 10px;
+    margin-left: 10%;
+}
+.center_panel_content_main{
+    width: 78%;
+    margin-left: 2%;
+    background-color: rgb(105, 105, 105);
+    padding: 10px;
+}

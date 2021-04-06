@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/selecting_role.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" >
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <a href="#dialog" name="modal">Вызов модального окна</a>
+
+        <!-- Само окно -->
+        <div id="boxes">  
+            <div id="dialog" class="window">
+                <div class="content">Текст в модальном окне.</div>
+            </div>
+        </div>
+
+        <!-- Маска, затемняющая фон -->
+        <div id="mask"></div>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script>
+        $(document).ready(function() {   
+            $('a[name=modal]').click(function(e) {
+            e.preventDefault();
+            var id = $(this).attr('href');
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+            $('#mask').css({'width':maskWidth,'height':maskHeight});
+            $('#mask').fadeIn(20); 
+            var winH = $(window).height();
+            var winW = $(window).width();
+            $(id).css('top',  winH/2-$(id).height()/2);
+            $(id).css('left', winW/2-$(id).width()/2);
+            $(id).fadeIn(300); 
+            });
+            $('.window .close').click(function (e) { 
+            e.preventDefault();
+            $('#mask, .window').hide();
+            }); 
+            $('#mask').click(function () {
+            $(this).hide();
+            $('.window').hide();
+            }); 
+        });  
+        </script>
+    </body>
+</html>

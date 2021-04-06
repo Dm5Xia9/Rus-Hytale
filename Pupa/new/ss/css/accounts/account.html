@@ -1,0 +1,81 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/account.css' %}" rel="stylesheet">
+{% endblock %}
+{% block leftPanel %}
+            <a href="{% url 'accounts:prof' UserNow.identifier %}"><div class="Button_accounts_statistics active">
+                Профиль
+            </div></a>
+<!--            <a href="#"><div class="Button_accounts_statistics">-->
+<!--                Сообщения-->
+<!--            </div></a>-->
+<!--            <a href="#"><div class="Button_accounts_statistics">-->
+<!--                Репутация-->
+<!--            </div></a>-->
+            <!-- <div class="Separation"></div>
+            <a href="#"><div class="Button_accounts_statistics">
+                Мессенджер
+            </div></a>
+            <a href="#"><div class="Button_accounts_statistics">
+                Уведомления
+            </div></a> -->
+            {% if User.is_authenticated %}
+            {% if User.id == UserNow.id%}
+            <div class="Separation"></div>
+            <a href="{% url 'accounts:settings'%}"><div class="Button_accounts_statistics">
+                Настройки
+            </div></a>
+            <a href="{% url 'logout' %}"><div class="Button_accounts_statistics close">
+                Выйти
+            </div></a>
+            {% endif %}
+            {% endif %}
+{% endblock %}
+{% block center %}
+            <div class="top_profile_content">
+                <div class="ava_profile_content">
+                    <img class="avaProfile_profile"  src="/media/{{ UserNow.avatar }}">
+                </div>
+                <div class="info_profile_content">
+                    <div class="top_info_profile_content">
+                        <div class="usernameProfile_profile">{{UserNow.username}}</div>
+                        {% if UserNow.city != None%}
+                        <div class="cityProfile_profile">·<a href="#">{{UserNow.city}}</a></div>
+                        {% endif %}
+                    </div>
+                    <div class="center_info_profile_content">
+                        <div class="groupProfile_profile">
+                            Новичок
+                        </div>
+                    </div>
+                    <div class="center_info_profile_content">
+                        <div class="messagesProfile_profile">
+                            Сообщений:<a href="">{{UserNow.messages_count}}</a>
+                        </div>
+                        <div class="pointsProfile_profile">
+                            Баллов:<a href="">{{UserNow.Points}}</a>
+                        </div>
+                    </div>
+<!--                    <div class="end_info_profile_content">-->
+<!--                        <div class="textProfile_profile">-->
+<!--                            <a href="#" class="TellProfile_profile">Расскажи о себе</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="end_end_info_profile_content">
+                        <div class="regProfile_profile">
+                            Дата регистрации: <div class="attention">{{UserNow.date_joined|date:'Y.m.d'}}</div>
+                        </div>
+                        <div class="lastProfile_profile">
+                            , Последняя активность: <div class="attention">{{UserNow.last_login|date:'Y.m.d'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

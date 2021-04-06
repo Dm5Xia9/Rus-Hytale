@@ -1,0 +1,167 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Статьи | Сообщество Rus-Hytale</title>
+        <meta property="og:site_name" content="Статьи | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Статьи | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Статьи | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/tapeHead.css' %}" rel="stylesheet">
+        <link href="{% static 'css/ArticleTape.css' %}" rel="stylesheet">
+        <link href="{% static 'css/ArticlesTape.css' %}" rel="stylesheet">
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script src="https://cdn.tiny.cloud/1/dpgdbj1dxfl5stivvh15xvyciqtpk1qt6jbjnuciisvvm5sv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+
+{% endblock %}
+{% block body %}
+        <div class="tapeHead">
+            <a href="{% url 'news:home'%}"><div class="Button_tapeHead">
+                Главная
+            </div></a>
+            <a href="{% url 'articles:articles'%}"><div class="Button_tapeHead active_tapeHead">
+                Статьи
+            </div></a>
+            <a href="{% url 'news:news'%}"><div class="Button_tapeHead">
+                Новости
+            </div></a>
+            <a href="{% url 'accounts:accs'%}"><div class="Button_tapeHead">
+                Пользователи
+            </div></a>
+            <div class="rightHead">
+                <div class="User_ArticleUI">
+                    {% if user.is_authenticated %}
+                    <img class="User_ava_ArticleUI" src="/media/{{ user.avatar }}">
+                    <a href="{% url 'accounts:prof' User.identifier %}"><div class="Username_ArticleUI">{{user.username}}</div></a>
+                    <a href="{% url 'logout' %}"><div class="OutButt">Выход</div></a>
+                    {% else %}
+                    <div class="AuthorizationUIMenu">
+                        <a href="{% url 'login' %}"><div class="GoButt">Вход</div></a>
+                        <a href="{% url 'accounts:reg' %}"><div class="GoButt">Регистрация</div></a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="left_menu">
+            <div class="titleButtins">
+                Популярные статьи
+            </div>
+            {% for popular_article in popular_articles %}
+            {% if popular_article.id == article.id %}
+            <a href="{% url 'articles:articles'%}?id={{popular_article.id}}"><div class="Button_accounts_statistics active">
+                {{popular_article.title}}
+            </div></a>
+            {% else %}
+            <a href="{% url 'articles:articles'%}?id={{popular_article.id}}"><div class="Button_accounts_statistics">
+                {{popular_article.title}}
+            </div></a>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="right_line"></div>
+        <div class="Articles_content_flex">
+            <div action="/file/" class="Articles_content" id="message">
+                <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="Article">
+                    <div class="User_Article">
+                        <div class="User_ava_Article"></div>
+                        <a href="{% url 'accounts:prof' article.user.identifier %}"><div class="Username_Article">{{article.user.username}}</div></a>
+                        <div class="Date_Article">| {{article.DateCreate|date:'Y.m.d'}}</div>
+                    </div>
+                    <div class="title_Article">
+                        <a>{{article.title}}</a>
+                        <div class="see_Article">
+                            👁 {{article.views}}
+                        </div>
+                        <div class="like_Article">
+                            <img src="{% static 'images/like.png' %}">
+                            {{article.likes}}
+                        </div>
+                        <div class="dilike_Article">
+                            <img src="{% static 'images/dilike.png' %}">
+                            {{article.dilikes}}
+                        </div>
+                    </div>
+                    <div class="text_Article">
+                        <textarea id="mytextarea" name="content">{{article.cover|safe}}</textarea>
+                    </div>
+                    
+                </div>
+                    <p class="Button"><button type="submit" class="ButtonNewsAnim">Опубликовать</button></p>
+                <div class="stub">
+
+                </div>
+                </form>
+            </div>
+        </div>
+        <script>
+        tinymce.init({
+        selector: '#mytextarea',
+        menubar: 'edit insert format table tools help',
+        height: '500px',
+        language: 'ru',
+        plugins: " advlist,autoresize, autolink,lists,link,image,charmap,print,preview,anchor,searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,code,wordcount",
+        autoresize_on_init: true,
+        image_title: true,
+        nowrap : false,
+        object_resizing : false,
+        images_upload_url: '/file/',
+        images_dataimg_filter: function(img) {
+    return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
+  },
+  /* enable automatic uploads of images represented by blob or data URIs*/
+  automatic_uploads: true,
+  /*
+    URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
+    images_upload_url: 'postAcceptor.php',
+    here we add custom filepicker only to Image dialog
+  */
+  file_picker_types: 'image',
+  /* and here's our custom image picker*/
+  init_instance_callback: function (inst) { inst.execCommand('mceAutoResize'); },
+  file_picker_callback: function (cb, value, meta) {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+
+    /*
+      Note: In modern browsers input[type="file"] is functional without
+      even adding it to the DOM, but that might not be the case in some older
+      or quirky browsers like IE, so you might want to add it to the DOM
+      just in case, and visually hide it. And do not forget do remove it
+      once you do not need it anymore.
+    */
+    var filename = "";
+    input.onchange = function () {
+        var file = this.files[0];
+        var fd = new FormData;
+        fd.append('file', file);
+        $.ajax(
+        {
+        type:"POST",
+        dataType: 'json',
+        url: "/file/",
+        data: fd,
+        processData: false,
+		contentType: false,
+        success: function(data) {
+        console.log(data);
+        filename = data.location;
+        cb(filename, {width:"100%", height:""});}
+        })};
+
+    input.click();
+  },
+        skin_url: "{% static 'css/custom/ui/CUSTOM'%}",
+        toolbar: 'redo undo forecolor backcolor bold italic strikethrough underline subscript superscript fontselect fontsizeselect alignjustify alignleft aligncenter alignright blockquote indent lineheight outdent',
+
+        });
+
+
+        </script>
+        <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
+{% endblock %}

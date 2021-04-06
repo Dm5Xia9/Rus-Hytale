@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rus-Hytale</title>
+    <link href="css/template.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
+    <link href="css/template_media.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/menu-tab.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" >
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="container_header">
+                <div class="left_block">
+                    <div class="m_menu">
+                        <div id="one"></div>
+                        <div id="two"></div>
+                        <div id="three"></div>
+                      </div>
+                    <img class="logo" src="images/LogoMain.png">
+                    <a class="button_header" href="#">Как стать автором</a>
+                </div>
+                <div class="main_news">
+                    <a class="main_new" href="#">Как написать сайт и не мусорнуться</a>
+                </div>
+                <div class="right_block_m">
+                    <span class="messages_count_header_m">100</span>
+                    <img class="messages_user_header_m" src="images/email.png">
+                    <img class="ava_user_header_m" src="images/ava.jpg">
+                </div>
+            </div>
+            <div class="menu-hide">
+                <nav>
+                    <ul>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Главная</li></a>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Статьи</li></a>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Новости</li></a>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Сообщества</li></a>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Пользователи</li></a>
+                      <a href="#"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Xia5dm9</li></a>
+                      <a href="#"><li>Профиль</li></a>
+                      <a href="#"><li>Статьи</li></a>
+                      <a href="#"><li>Активность</li></a>
+                      <a href="#"><li>Мессенджер</li></a>
+                      <a href="#"><li>Настройки</li></a>
+                      <a href="#"><li>Выход</li></a>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+    <div class="under_header">
+        <div class="container">
+            <div class="container_under_header">
+                <div class="left_block_under_header">
+                    <a href="#"><div class="item_menu_under_header">Главная</div></a>
+                    <a href="#"><div class="item_menu_under_header">Статьи</div></a>
+                    <a href="#"><div class="item_menu_under_header">Новости</div></a>
+                    <a href="#"><div class="item_menu_under_header">Сообщества</div></a>
+                    <a href="#"><div class="item_menu_under_header active_under_item">Пользователи</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content_main">
+            <div class="left_panel_content_main">
+                <a href="#"><div class="item_left_panel_content_main">Профиль</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Статьи</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Активность</div></a>
+                <a href="#"><div class="item_left_panel_content_main active_item_left_panel_content_main">Мессенджер</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Настройки</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Выход</div></a>
+            </div>
+            <div class="center_panel_content_main">
+                <div class="head_messages">
+                    <a href="#"><div class="button_back_messages">Назад</div></a>
+                    <form class="form_messages">
+                        <input type="text" class="input_message_messages">
+                        <div class="submin_content_message_messages">
+                            <button type="submit" class="submin_message_messages"><img src="images/go_messages.png"></button>
+                            <button type="submit" class="answer_message_messages"><img src="images/answer.png"></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer_messages">
+                    <div>
+                        <img class="edit_message_messages" src="images/edit.png">
+                    </div>
+                    <div style="padding-left: 10px;">
+                        <img class="delete_message_messages" src="images/del.png">
+                    </div>
+                    
+                </div>
+
+                <div class="messages_content">
+                    <script type="text/javascript">
+                        $(function(){
+                                $("a[href^='#']").click(function(){
+                                        var _href = $(this).attr("href");
+                                        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+                                        return false;
+                                });
+                        });
+                        </script>
+                    <script>
+                         $(document).ready(function(){
+                            var data = []
+                            $(".message_messages").click(function(){
+                                if($(this).hasClass('active_message_messages')){
+                                        $(this).removeClass('active_message_messages');
+                                        var data_object = $('.active_message_messages');
+                                        data = []
+                                        $.each(data_object,function(index,value){
+                                            data.push(data_object[index].id)
+                                        })
+                                        console.log(data);
+                                        if(data.length == 0){
+                                            $('.submin_message_messages').css('display', 'block')
+                                            $('.answer_message_messages').css('display', 'none')
+                                            $('.delete_message_messages').css('display', 'none')
+                                            $('.edit_message_messages').css('display', 'none')
+                                        }
+                                        else{
+                                            if(data.length == 1){
+                                                gyg = data[0].split('_')
+                                                console.log(gyg);
+                                                if(gyg[0] == gyg[2]){
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'block')
+                                                }
+                                                else{
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'none')
+                                                }
+                                            }
+                                            else{
+                                                $('.submin_message_messages').css('display', 'none')
+                                                $('.answer_message_messages').css('display', 'block')
+                                                $('.delete_message_messages').css('display', 'block')
+                                                $('.edit_message_messages').css('display', 'none')
+                                            }
+                                        }
+                                        
+                                    }
+                                    else{
+                                        $(this).addClass('active_message_messages');
+                                        var data_object = $('.active_message_messages');
+                                        data = []
+                                        $.each(data_object,function(index,value){
+                                            data.push(data_object[index].id)
+                                        })
+                                        console.log(data);
+                                        if(data.length == 0){
+                                            $('.submin_message_messages').css('display', 'block')
+                                            $('.answer_message_messages').css('display', 'none')
+                                            $('.delete_message_messages').css('display', 'none')
+                                            $('.edit_message_messages').css('display', 'none')
+                                        }
+                                        else{
+                                            if(data.length == 1){
+                                                gyg = data[0].split('_')
+                                                console.log(gyg);
+                                                if(gyg[0] == gyg[2]){
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'block')
+                                                }
+                                                else{
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'none')
+                                                }
+                                            }
+                                            else{
+                                                $('.submin_message_messages').css('display', 'none')
+                                                $('.answer_message_messages').css('display', 'block')
+                                                $('.delete_message_messages').css('display', 'block')
+                                                $('.edit_message_messages').css('display', 'none')
+                                            }
+                                        }
+                                    }
+                            })
+                            $(".message_my_messages").click(function(){
+                                if($(this).hasClass('active_message_messages')){
+                                        $(this).removeClass('active_message_messages');
+                                        var data_object = $('.active_message_messages');
+                                        data = []
+                                        $.each(data_object,function(index,value){
+                                            data.push(data_object[index].id)
+                                        })
+                                        console.log(data);
+                                        if(data.length == 0){
+                                            $('.submin_message_messages').css('display', 'block')
+                                            $('.answer_message_messages').css('display', 'none')
+                                            $('.delete_message_messages').css('display', 'none')
+                                            $('.edit_message_messages').css('display', 'none')
+                                        }
+                                        else{
+                                            if(data.length == 1){
+                                                gyg = data[0].split('_')
+                                                console.log(gyg);
+                                                if(gyg[0] == gyg[2]){
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'block')
+                                                }
+                                                else{
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'none')
+                                                }
+                                            }
+                                            else{
+                                                $('.submin_message_messages').css('display', 'none')
+                                                $('.answer_message_messages').css('display', 'block')
+                                                $('.delete_message_messages').css('display', 'block')
+                                                $('.edit_message_messages').css('display', 'none')
+                                            }
+                                        }
+                                        
+                                    }
+                                    else{
+                                        $(this).addClass('active_message_messages');
+                                        var data_object = $('.active_message_messages');
+                                        data = []
+                                        $.each(data_object,function(index,value){
+                                            data.push(data_object[index].id)
+                                        })
+                                        console.log(data);
+                                        if(data.length == 0){
+                                            $('.submin_message_messages').css('display', 'block')
+                                            $('.answer_message_messages').css('display', 'none')
+                                            $('.delete_message_messages').css('display', 'none')
+                                            $('.edit_message_messages').css('display', 'none')
+                                        }
+                                        else{
+                                            if(data.length == 1){
+                                                gyg = data[0].split('_')
+                                                console.log(gyg);
+                                                if(gyg[0] == gyg[2]){
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'block')
+                                                }
+                                                else{
+                                                    $('.submin_message_messages').css('display', 'none')
+                                                    $('.answer_message_messages').css('display', 'block')
+                                                    $('.delete_message_messages').css('display', 'block')
+                                                    $('.edit_message_messages').css('display', 'none')
+                                                }
+                                            }
+                                            else{
+                                                $('.submin_message_messages').css('display', 'none')
+                                                $('.answer_message_messages').css('display', 'block')
+                                                $('.delete_message_messages').css('display', 'block')
+                                                $('.edit_message_messages').css('display', 'none')
+                                            }
+                                        }
+                                    }
+                            })
+                        
+                        })
+                    </script>
+                    <script>
+                        ff = $('.head_messages').offset().top;
+                        $(window).scroll(function() {
+                            if ($(this).scrollTop() > ff) {
+                                if($('.head_messages').hasClass('fix_head_messages')){
+                                }
+                                else{
+                                    $('.head_messages').addClass('fix_head_messages');
+                                }
+                                
+                            } else {
+                                if($('.head_messages').hasClass('fix_head_messages')){
+                                    $('.head_messages').removeClass('fix_head_messages');
+                                }
+                                else{
+                                }
+                                
+                            }
+                            });
+                    </script>
+                    <div class="line_block_message_messages">
+                        <div class="user_message_messages">
+                            <img class="ava_user_message_messages" src="images/ava.jpg">
+                            <a class="username_user_message_messages" href="#">
+                                Xia5dm9
+                            </a>
+                        </div>
+                        <div class="message_messages" id="2_1_1_1">
+                            fffffffffffffffffffffffffffffffffff че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    <div class="line_block_message_messages">
+                        
+                        <div class="message_messages" id="2_1_1_2">
+                            Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    <div class="line_my_block_message_messages">
+                        <div class="user_my_message_messages">
+                            <a class="username_my_user_message_messages" href="#">
+                                Xia5dm9
+                            </a>
+                            <img class="ava_my_user_message_messages" src="images/ava.jpg">
+                        </div>
+                        <div class="message_my_messages" id="2_1_2_1">
+                            Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    <div class="line_block_message_messages">
+                        <div class="user_message_messages">
+                            <img class="ava_user_message_messages" src="images/ava.jpg">
+                            <a class="username_user_message_messages" href="#">
+                                Xia5dm9
+                            </a>
+                        </div>
+                        <div class="message_messages" id="2_1_1_3">
+                            Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    <div class="line_block_message_messages">
+                        
+                        <div class="message_messages" id="2_1_1_4">
+                            Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    <div class="line_my_block_message_messages">
+                        <div class="user_my_message_messages">
+                            <a class="username_my_user_message_messages" href="#">
+                                Xia5dm9
+                            </a>
+                            <img class="ava_my_user_message_messages" src="images/ava.jpg">
+                        </div>
+                        <div class="message_my_messages" id="2_1_2_2">
+                            Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как Привет че как 
+                        </div>
+                    </div>
+                    
+                    <div class="still_messages">
+                        Еще
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

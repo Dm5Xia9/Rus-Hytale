@@ -1,0 +1,83 @@
+.Authorization{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    left: 12%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.InputText h3{
+    color:  #e7e7e7;
+    margin-top: 330%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+    letter-spacing: 1px;
+    margin-left: 5vw;
+    font-weight: bold;
+}
+
+.auth{
+    padding-top: 0.6vw;
+    width: 20vw;
+    font-family: 'Raleway', sans-serif;
+    color: #e7e7e7;
+    font-weight: 600;
+    font-size: 1.5vw;
+    letter-spacing: 1px;
+    background: url("../images/Input.png") no-repeat;
+    background-size: 100% 100%;
+    transition: background 0.3s linear, color 0.4s linear;
+    display: block;
+    text-indent: 2.5vw;
+    padding-bottom: 1vw;
+    margin-left: 2vw;
+    position: relative;
+    text-decoration: none;
+    
+}
+.auth:hover{
+    background: url("../images/InputActive.png") no-repeat;
+    color: black;
+    background-size: 100% 100%;
+}
+.reg{
+    margin-top: 0.2vw;
+    padding-top: 0.6vw;
+    width: 20vw;
+    z-index: 100;
+    font-family: 'Raleway', sans-serif;
+    color: #e7e7e7;
+    font-weight: 600;
+    font-size: 1.5vw;
+    letter-spacing: 1px;
+    background: url(../images/Reg.png) no-repeat;
+    background-size: 100% 100%;
+    transition: background 0.3s linear, color 0.4s linear;
+    display: block;
+    text-indent: 2.5vw;
+    padding-bottom: 1vw;
+    margin-left: 2vw;
+    text-decoration: none;
+}
+.reg:hover{
+    background: url("../images/RegActive.png") no-repeat;
+    color: black;
+    background-size: 100% 100%;
+}
+.logOut{
+    color: #8BC34A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    margin-left: 5vw;
+}
+.logOut:active{
+    color: #8BC34A;
+}
+
+

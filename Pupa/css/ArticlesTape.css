@@ -1,0 +1,209 @@
+body{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+}
+a{
+    text-decoration:none;
+}
+.left_menu{
+    position: fixed;
+    background-color: rgb(95, 95, 95);
+    margin-top: 8%;
+    margin-left: 5%;
+    width: 14%;
+    height: 81%;
+}
+.right_line{
+    position: fixed;
+    background-color: rgb(95, 95, 95);
+    margin-top: 5%;
+    margin-left: 94.2%;
+    width: 0.2%;
+    height: 82%;
+}
+.titleButtins{
+    padding: 0.6vw;
+    text-align: center;
+    font-size: 1.1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(233, 233, 233);
+    padding-bottom: 0.5vw;
+    border-bottom: 0.05vw solid rgb(167, 167, 167);
+}
+.titleButtins a{
+    color:rgb(233, 233, 233);
+}
+.titleButtins:hover a{
+    color:rgb(139, 195, 74);
+}
+.Button_accounts_statistics{
+    padding: 0.9vw;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.Button_accounts_statistics:hover{
+    color:rgb(233, 233, 233);
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.active{
+    background-color:rgba(233, 233, 233, 0.1);
+    border-left: 0.15vw solid rgb(139, 195, 74);
+}
+.Articles_content_flex{
+    position: fixed;
+    background-color: rgb(95, 95, 95);
+    margin-top: 8%;
+    margin-left: 20%;
+    width: 73.5%;
+    height: 81%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Articles_content{
+    width: 100%;
+    height: 100%;
+    padding-top: 0.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+}
+.Articles_content::-webkit-scrollbar { width: 0; }
+.title_Article{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 1.8vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(233, 233, 233);
+    padding-bottom: 0.5vw;
+    border-bottom: 0.05vw solid rgb(167, 167, 167);
+}
+.title_Article a{
+    font-size: 1.8vw;
+    font-weight: 600;
+    color:rgb(233, 233, 233);
+    font-family: 'Raleway';
+}
+.title_Article a:hover{
+    color:rgb(139, 195, 74);
+}
+.tags_topic{
+    padding-top: 0.5vw;
+}
+.tags_topic a{
+    font-size: 0.7vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.tags_topic a:hover{
+    color:rgb(233, 233, 233);
+}
+.tags_Article{
+    padding-top: 0.5vw;
+}
+.tags_Article a{
+    font-size: 0.8vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    border: 0.05vw solid rgb(139, 195, 74);
+    padding: 0.2vw;
+    border-radius: 0.3vw;
+}
+.User_Article{
+    padding-top: 1vw;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5vw;
+}
+.User_ava_Article{
+    width: 2vw;
+    height: 2vw;
+    background-color: rgb(95, 95, 95);
+    border: 0.05vw solid rgb(233, 233, 233);
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.Username_Article{
+    margin-left: 0.5vw;
+    padding-top: 0.45vw;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.Username_Article:hover{
+    color:rgb(139, 195, 74);
+}
+.Date_Article{
+    margin-left: 0.5vw;
+    padding-top: 0.45vw;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.text_Article{
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    padding-top: 0.5vw;
+}
+.see_Article{
+    font-weight: 100;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
+    font-size: 1vw;
+}
+.like_Article{
+    font-weight: 100;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+    font-size: 1vw;
+}
+.like_Article img{
+    width: 1vw;
+    height: 1vw;
+}
+.dilike_Article{
+    font-weight: 100;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+    font-size: 1vw;
+}
+.dilike_Article img{
+    margin-top: 0.1vw;
+    width: 1vw;
+    height: 1vw;
+}
+.ReadMore{
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    border: 0.05vw solid rgb(216, 216, 216);
+    padding: 0.5vw;
+}
+.ReadMore:hover{
+    background-color: rgb(216, 216, 216);
+    color:rgb(12, 12, 12);
+}
+.ReadMore_content{
+    padding-top: 1.5vw;
+    padding-bottom: 0.5vw;
+    height: 100%;
+}
+.stub{
+    height: 1vw;
+    width: 100%;
+}

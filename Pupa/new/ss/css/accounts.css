@@ -1,0 +1,192 @@
+body{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    overflow-x: hidden;
+}
+.left_menu{
+    position: fixed;
+    background-color: rgb(95, 95, 95);
+    margin-top: 8%;
+    margin-left: 5%;
+    width: 14%;
+    height: 81%;
+}
+a{
+    text-decoration:none;
+}
+.right_line{
+    position: fixed;
+    background-color: rgb(95, 95, 95);
+    margin-top: 5%;
+    margin-left: 94.2%;
+    width: 0.2%;
+    height: 82%;
+}
+.titleButtins{
+    padding: 0.6vw;
+    text-align: center;
+    font-size: 1.1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(233, 233, 233);
+    padding-bottom: 0.5vw;
+    border-bottom: 0.05vw solid rgb(167, 167, 167);
+}
+.Button_accounts_statistics{
+    padding: 0.9vw;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.Button_accounts_statistics:hover{
+    color:rgb(233, 233, 233);
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.active{
+    background-color:rgba(233, 233, 233, 0.1);
+    border-left: 0.15vw solid rgb(139, 195, 74);
+}
+.accounts_content{
+    position: absolute;
+    background-color: rgb(95, 95, 95);
+    margin-top: 8%;
+    margin-left: 20%;
+    width: 73.5%;
+    height: 81%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+}
+.review{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2vw;
+}
+.accounts_block_review{
+    margin-bottom: 2vw;
+    margin-left: 4.6%;
+    height: 22vw;
+    width: 27%;
+    border-top: 0.05vw solid rgb(167, 167, 167);
+    border-bottom: 0.05vw solid rgb(167, 167, 167);
+}
+.title_review{
+    margin-left: 5%;
+    width: 90%;
+    padding: 0.6vw;
+    text-align: center;
+    font-size: 1.1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(233, 233, 233);
+    padding-bottom: 0.5vw;
+    border-bottom: 0.05vw solid rgb(167, 167, 167);
+    transition: color 0.1s linear;
+}
+.title_review:hover{
+    color:rgb(139, 195, 74);
+}
+.accounts_list{
+    margin-left: 5%;
+    width: 90%;
+    height: 100%;
+}
+.account{
+    margin-top: 0.7vw;
+    height: 3vw;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.account:hover{
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.account:hover .avaAccount{
+    border: 0.05vw solid rgb(139, 195, 74);
+}
+.account:hover .username{
+    color:rgb(233, 233, 233);
+}
+.avaAccount{
+    margin-left: -5%;
+    width: 3vw;
+    height: 3vw;
+    background-color: rgb(95, 95, 95);
+    border: 0.05vw solid rgb(233, 233, 233);
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.username{
+    padding-top: 0.8vw;
+    font-size: 1.2vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    padding-left: 1vw;
+}
+.number{
+    position: absolute;
+    margin-left: 13vw;
+    padding-top: 0.8vw;
+    font-size: 1.2vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    padding-left: 1vw;
+}
+.messages_accounts{
+    padding-top: 2vw;
+}
+.account_mes{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 6vw;
+    margin-left: 3%;
+    width: 94%;
+    border-top: 0.05vw solid rgb(167, 167, 167);
+}
+.account_mes:hover{
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.account_mes:hover .avaAccount_Big{
+    border: 0.05vw solid rgb(139, 195, 74);
+}
+.avaAccount_Big{
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+    width: 5vw;
+    height: 5vw;
+    background-color: rgb(95, 95, 95);
+    border: 0.05vw solid rgb(233, 233, 233);
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.messages_accounts_end{
+    height: 2vw;
+}
+.end_border{
+    margin-left: 3%;
+    width: 94%;
+    border-top: 0.05vw solid rgb(167, 167, 167);
+}
+.username_Big{
+    margin-left: 1vw;
+    padding-top: 1.9vw;
+    font-size: 1.7vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    padding-left: 1vw;
+}
+.number_Big{
+    position: absolute;
+    margin-left: 60vw;
+    padding-top: 1.9vw;
+    font-size: 1.7vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+    padding-left: 1vw;
+}

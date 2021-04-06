@@ -1,0 +1,136 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block title %}
+        <title>Настройки</title>
+        <meta property="og:site_name" content="Настройки | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Настройки | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Настройки | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/tapeHead.css' %}" rel="stylesheet">
+        <link href="{% static 'css/settAccount.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+        <div class="tapeHead">
+            <a href="{% url 'news:home'%}"><div class="Button_tapeHead">
+                Главная
+            </div></a>
+            <a href="{% url 'articles:articles'%}"><div class="Button_tapeHead">
+                Статьи
+            </div></a>
+            <a href="{% url 'news:news'%}"><div class="Button_tapeHead">
+                Новости
+            </div></a>
+            <a href="{% url 'accounts:accs'%}"><div class="Button_tapeHead">
+                Пользователи
+            </div></a>
+            <div class="rightHead">
+                <div class="User_Article">
+                    {% if user.is_authenticated %}
+                    <img class="User_ava_Article" src="/media/{{ user.avatar }}">
+                    <a href="{% url 'accounts:prof' User.identifier %}"><div class="Username_Article">{{user.username}}</div></a>
+                    <a href="{% url 'logout' %}"><div class="OutButt">Выход</div></a>
+                    {% else %}
+                    <div class="AuthorizationUIMenu">
+                        <a href="{% url 'login' %}"><div class="GoButt">Вход</div></a>
+                        <a href="{% url 'accounts:reg' %}"><div class="GoButt">Регистрация</div></a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="left_menu">
+            <a href="{% url 'accounts:prof' User.identifier %}"><div class="Button_accounts_statistics">
+                Профиль
+            </div></a>
+<!--            <a href="#"><div class="Button_accounts_statistics">-->
+<!--                Сообщения-->
+<!--            </div></a>-->
+<!--            <a href="#"><div class="Button_accounts_statistics">-->
+<!--                Репутация-->
+<!--            </div></a>-->
+            <!-- <div class="Separation"></div>
+            <a href="#"><div class="Button_accounts_statistics">
+                Мессенджер
+            </div></a>
+            <a href="#"><div class="Button_accounts_statistics">
+                Уведомления
+            </div></a> -->
+            <div class="Separation"></div>
+            <a href="{% url 'accounts:settings'%}"><div class="Button_accounts_statistics active">
+                Настройки
+            </div></a>
+            <a href="{% url 'logout' %}"><div class="Button_accounts_statistics close">
+                Выйти
+            </div></a>
+        </div>
+        <div class="right_line"></div>
+        <div class="account_settings_content">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="section_setting">
+                <div class="title_section_settings">
+                    Общее
+                </div>
+                <div class="ava_content">
+                    <img class="avaProfile_profile"  src="/media/{{ User.avatar }}">
+                    <div class="avaInput">
+                        <div>Добавьте изображение для изменения аватара</div>
+                        <input type="file" name="ava" id="id_ava" value="{{User.avatar|default:''}}" accept="image/x-png,image/gif,image/jpeg">
+                    </div>
+                </div>
+                <div class="Settings">
+                    <p class="setting">
+                        <b>Ник</b>
+                        <input name="username" id="id_username" value="{{User.username|default:''}}">
+                    </p>
+                    <p class="setting">
+                        <b>Идентификатор</b>
+                        <input type="text" name="identifier" id="id_identifier" value="{{User.identifier|default:''}}">
+                    </p>
+                    <p class="setting">
+                        <b>Почта</b>
+                        <b class="SecretInfo">d*********@gmail.com</b>
+                        <a class="general_edit" href="#">Изменить?</a>
+                    </p>
+                    <p class="setting">
+                        <b>Пароль</b>
+                        <b class="SecretInfo"></b>
+                        <a class="general_edit" href="#">Изменить?</a>
+                    </p>
+                </div>
+            </div>
+            <div class="section_setting">
+                <div class="title_section_settings">
+                    Персональная информация
+                </div>
+                <div class="Settings">
+                    <p class="setting">
+                        <b>Имя</b>
+                        <input  type="text" name="first_name" id="id_first_name" value="{{User.first_name|default:''}}">
+                    </p>
+                    <p class="setting">
+                        <b>Фамилия</b>
+                        <input type="text" name="last_name" id="id_last_name" value="{{User.last_name|default:''}}">
+                    </p>
+                    <p class="setting">
+                        <b>Дата рождения</b>
+                        <input type="date" name="DateBirth" id="id_DateBirth" value="{{User.DateBirth|date:'Y-m-d'}}">
+                    </p>
+                    <p class="setting">
+                        <b>Город</b>
+                        <input type="text" name="city" id="id_city" value="{{User.city|default:''}}">
+                    </p>
+                    <p class="setting">
+                        <b>Телефон</b>
+                        <input type="text" name="telephone" id="id_telephone" value="{{User.telephone|default:''}}">
+                    </p>
+                </div>
+            </div>
+            <p class="Button"><button type="submit" class="ButtonNewsAnim">Сохранить</button></p>
+            </form>
+        </div>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/ButtonPuls.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/Scroll.js' %}"></script>
+{% endblock %}
