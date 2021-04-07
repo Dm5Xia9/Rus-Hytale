@@ -1,0 +1,31 @@
+body {
+  background: rgba(83, 83, 83);
+  font-family: 'Kaushan Script', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+.BackHeader{
+  opacity:0.4;
+  width: 100%;
+}
+#BlockPost{
+
+}
+#BlockPost h1{
+  color: #8bc34a;
+  font-weight: bold;
+  margin-left: 160px;
+  padding: 10px 0px 20px 20px;
+}
+#BlockPost h2{
+  color: #cccccc;
+  margin-left: 178px;
+}
+#BlockPost img{
+  width: 1200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

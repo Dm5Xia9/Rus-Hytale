@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/blogNew.css" rel="stylesheet">
+    <title>Название новости</title>
+</head>
+<body>
+    <header id="header">
+        <div class="colorHeader">
+            <div class="navbar navbar-inverse">
+                <a class="navbar-brand" href="index.html">
+                    <h1><img src="images/logo.png"></h1>
+                </a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="blog.html">Блог</a>
+                    <ul class="sub-menu">
+                        <li><a href="blog.html">Blog Default</a></li>
+                        <li><a href="blogtwo.html">Timeline Blog</a></li>
+                        <li><a href="blogone.html">2 Columns + Right Sidebar</a></li>
+                        <li><a href="blogthree.html">1 Column + Left Sidebar</a></li>
+                        <li><a href="blogfour.html">Blog Masonary</a></li>
+                        <li><a href="blogdetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="portfolio.html">Серверы</a>
+                    <ul class="sub-menu">
+                        <li><a href="portfolio.html">Portfolio Default</a></li>
+                        <li><a href="portfoliofour.html">Isotope 3 Columns + Right Sidebar</a></li>
+                        <li><a href="portfolioone.html">3 Columns + Right Sidebar</a></li>
+                        <li><a href="portfoliotwo.html">3 Columns + Left Sidebar</a></li>
+                        <li><a href="portfoliothree.html">2 Columns</a></li>
+                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="shortcodes.html ">Форум</a></li>
+            </ul>
+                <div class="search">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="BlockContent">
+            <section class="section">
+                <div class="container">
+                    <div class="section_header">
+                        <h2 class="section_title">название новости</h2>
+                    </div>
+                    <img src="images/Raz.png">
+                </div>
+                <div class="Content">
+                    <img src="images/blog/1.jpg">
+                    <div class="ContentText">
+                        Тут теееекст
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+    $(document).scroll(function(e) {
+        $(window).scrollTop() > 10 ? $('.navbar').addClass('navbar2') : $('.navbar').removeClass('navbar2');
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% if num == 1 %}
+              <div class="newBlock">
+              </div>
+              <a href="{% url 'deatail' cont1.id %}">
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont1.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <h2>{{cont1.new_title}}</h2>
+                        <P>{{cont1.new_text|truncatechars:200}}</P>
+                    </div>
+                </div>
+                </a>
+{% elif num == 2 %}
+              <div class="newBlock">
+              </div>
+              <a href="{% url 'news:deatail' cont1.id %}">
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont1.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <h2>{{cont1.new_title}}</h2>
+                        <P>{{cont1.new_text|truncatechars:200}}</P>
+                    </div>
+                </div>
+                </a>
+                <div class="newBlock">
+                </div>
+                <a href="{% url 'news:deatail' cont2.id %}">
+                <div class="single-features-right">
+                    <div class="col-sm-6 col-sm-offset-1 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                      <h2>{{cont2.new_title}}</h2>
+                      <P>{{cont2.new_text|truncatechars:200}}</P>
+                    </div>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont2.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                </div>
+                </a>
+{% elif num == 3 %}
+              <div class="newBlock">
+              </div>
+              <a href="#">
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont1.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <h2>{{cont1.new_title}}</h2>
+                        <P>{{cont1.new_text|truncatechars:200}}</P>
+                    </div>
+                </div>
+                </a>
+                <div class="newBlock">
+                </div>
+                <a href="#">
+                <div class="single-features-right">
+                    <div class="col-sm-6 col-sm-offset-1 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                      <h2>{{cont2.new_title}}</h2>
+                      <P>{{cont2.new_text|truncatechars:200}}</P>
+                    </div>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont2.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                </div>
+                </a>
+              <div class="newBlock">
+              </div>
+              <a href="#">
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <img src="static/{{ cont3.new_img.name }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
+                        <h2>{{cont3.new_title}}</h2>
+                        <P>{{cont3.new_text|truncatechars:200}}</P>
+                    </div>
+                </div>
+                </a>
+
+{% else %}
+{% endif%}
+{% endblock %}

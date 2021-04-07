@@ -1,0 +1,116 @@
+  #header .navbar-brand{
+    margin-top: -34px;
+  }
+  
+  #header .navbar-brand h1{
+    padding: 0;
+    margin: 0;
+    width: 374px;
+    height: 113px;
+  }
+  #header .navbar-brand h1 img{
+    width: 170px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 200px;
+  }
+  #header .navbar-nav{
+    margin-right: 200px;
+    margin-top: 0px;
+    color: #C0C0C0;
+  }
+  
+  
+  #header .navbar-nav.navbar-right >li a {
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 300px;
+  }
+  
+  #header .navbar-inverse .navbar-nav  li.active > a,
+  #header .navbar-inverse .navbar-nav  li.active > a:focus,
+  #header .navbar-nav.navbar-right li > a:hover,
+  .navbar-inverse .navbar-nav > .open > a {
+    background-color: inherit;
+    border: 0;
+    color: #8bc34a;
+  }
+  
+  #header .navbar-inverse .navbar-nav  li a:hover{
+    color: #8bc34a;
+  }
+  #header .navbar-nav li ul.sub-menu li a{
+    color: #cccccc;
+    padding: 5px 0;
+    font-size: 13px;
+    display: block;
+    text-transform: capitalize;
+  }
+  .colorHeader{
+    margin-bottom: 0;
+    padding: 5px 0 5px 0;
+    position: fixed;
+    z-index: 999999;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .navbar {
+    background: rgba(65, 65, 65, 0);
+    border: 0;
+    margin-bottom: 0;
+    margin-top: -6px;
+  }
+  .navbar2 {
+    background: rgba(65, 65, 65, 1);
+  }
+
+.nav {
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  ul.sub-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .search{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 1;
+    margin-right: 170px;
+    margin-top: 0px;
+  }
+  
+  .search i{
+    color: #C0C0C0;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    transition: color 0.3s ease;
+  }
+  .search i:hover{
+    color: #8bc34a;
+  }
+  .field-toggle{
+    position: relative;
+    top: 30px;
+    right: 15px;
+    display: none;
+    height: 50px;
+  }
+  .search-form{
+    padding-left: 10px;
+    height: 40px;
+    font-size: 18px;
+    color: #818285;
+    font-weight: 300;
+    outline: none;
+    border: 1px solid #00aeef;
+    margin-top: 20px;
+    border-radius: 4px;
+  }

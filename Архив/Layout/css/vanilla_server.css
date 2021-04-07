@@ -1,0 +1,284 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+
+    /*background: linear-gradient(45deg,
+    #646464, #3c3c3c);*/
+    background: linear-gradient(25deg,
+    #414345, #414345, #414345, #4d5c3c);
+
+}
+.BackHeader{
+  opacity:0.4;
+  width: 100%;
+}
+.search-form{
+  padding-left: 10px;
+  height: 40px;
+  font-size: 18px;
+  color: #818285;
+  font-weight: 300;
+  outline: none;
+  border: 1px solid #00aeef;
+  margin-top: 20px;
+  border-radius: 4px;
+  z-index: 100000;
+}
+.search{
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 1;
+  margin-right: 180px;
+  margin-top: -5px;
+}
+.field-toggle{
+  position: relative;
+  top: 30px;
+  right: 15px;
+  display: none;
+  height: 50px;
+}
+.search i{
+  color: #C0C0C0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  transition: color 0.3s ease;
+}
+.search i:hover{
+  color: #8bc34a;
+}
+
+/* Container */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #333;
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Nav */
+
+.nav {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav_link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color 0.1s linear;
+}
+
+.nav_link:after {
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    background-color: #ff9900;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity 0.1s linear;
+}
+
+.nav_link:hover {
+    color: #ff9900;
+}
+
+.nav_link:hover:after {
+    opacity: 1;
+}
+
+/* vanilla_server */
+
+/* Secton */
+
+.section {
+    padding: 80px 0;
+}
+
+.section_header {
+    width: 100px;
+    max-width: 950px;
+    margin: 0 auto 40px;
+    text-align: center;
+    display: inline;
+}
+
+.section_title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* about */
+
+.why_us {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.why_item {
+    width: 380px;
+    background-color: #78e2d9;
+    display: inline;
+    position: relative;
+}
+
+.why_item:hover .about_image {
+    transform: translate3d(-10px, -10px, 0);
+}
+
+.why_item:hover .why_text {
+    opacity: 1;
+}
+
+.why_item:hover .about_image img {
+    opacity: 0.2;
+}
+
+.about_image {
+    background: linear-gradient(to bottom,
+    #11998e, #38ef7d);
+    transition: transform 0.2s linear;
+}
+
+.about_image img {
+    display: block;
+    transition: opacity 0.1s linear;
+}
+
+.why_text {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity 0.2s linear;
+}
+
+/* Stats */
+
+.statistics {
+
+    background-image: url("../images/back1.jpg");
+    padding: 79px;
+    margin-top: 80px;
+}
+
+/*.stats_background {
+    background-image: url("../images/back1.jpg");
+}*/
+
+.stats {
+    display: flex;
+
+}
+
+.stats_items {
+    flex: 1 1 0;
+    padding: 16px 25px;
+    border-left: 2px solid #fff;
+    text-align: center;
+    color: #fff;
+}
+
+.stats_items:last-child {
+    border-right: 2px solid #fff;
+}
+
+.stats_count {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stats_name {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Bottom */
+
+.footer {
+    padding-top: 14px;
+}
+
+.bottom_info_header {
+    display: flex;
+    text-align: right;
+}
+
+.footer_logo {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #38ef7d;
+}
