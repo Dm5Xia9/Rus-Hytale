@@ -1,0 +1,123 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_articles %}
+                    {% if User.is_authenticated %}
+                      <a href="{% url 'articles:articles_add' %}"><li>Написать статью</li></a>
+                    {% endif %}
+                      <a href="{% url 'articles:articles' %}"><li>Последние статьи</li></a>
+                      {% comment %} <a href="{% url 'articles:articles_pop' %}"><li>Популярное</li></a> {% endcomment %}
+{% endblock %}
+{% block head_main_articles %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                {% if User.is_authenticated %}
+                <a href="{% url 'articles:articles_add' %}"><div class="item_left_panel_content_main">Написать статью</div></a>
+                {% endif %}
+                <a href="{% url 'articles:articles' %}"><div class="item_left_panel_content_main {% if general %}active_item_left_panel_content_main{%endif%}">Последние статьи</div></a>
+                {% if User.is_authenticated %}
+                <a href="{% url 'articles:tag_list' %}"><div class="item_left_panel_content_main">Список тегов</div></a>
+                {% for tag_p in tags_p%}
+                <a href="{% url 'articles:articles'%}?tag_id={{tag_p.tag.id}}"><div class="item_left_panel_content_main {% if tag_p.tag.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{tag_p.tag.title}}</div></a>
+                {% endfor %}
+                {% else %}
+                {% for tag_p in tags_p%}
+                <a href="{% url 'articles:articles'%}?tag_id={{tag_p.id}}"><div class="item_left_panel_content_main {% if tag_p.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{tag_p.title}}</div></a>
+                {% endfor %}
+                {% endif %}
+{% endblock %}
+{% block center_panel_content_main %}
+<!--                <script>-->
+<!--                    $(window).scroll(function(){-->
+<!--                        if(Math.floor($(document).height() - $(window).height() - $(window).scrollTop()) < 150){-->
+<!--                            $('.text_read_mess').addClass('read_mess_active');-->
+<!--                        }-->
+<!--                        else{-->
+<!--                            $('.text_read_mess').removeClass('read_mess_active');-->
+<!--                        }-->
+<!--                    })-->
+<!--                    $( document ).ready(function() {-->
+<!--    $('.text_read_mess').click(function(){-->
+<!--        var num_ar = $('.article_block_s').length;-->
+<!--        $('.text_read_mess').removeClass('read_mess_active');-->
+<!--        $.ajax({-->
+<!--        type:"POST",-->
+<!--        url: "/articles/",-->
+<!--        data: {num_articles: num_ar},-->
+<!--        success: function(data) {-->
+<!--          console.log(data);-->
+<!--          $.each(data.arts,function(index,value){-->
+<!--              $(".center_panel_content_main").append(-->
+<!--          "<div class='article_block_s' style='padding-bottom: 10px;'>"+-->
+<!--          "<div class='top_user_article_s'>"+-->
+<!--          "<img class='ava_user_article_s' src='"+data.arts[index].avaurl+"'>"+-->
+<!--          "<a class='name_user_article_s' href='"+data.arts[index].acurl+"'>"+data.arts[index].usname+"</a>"+-->
+<!--          "<div class='date_article_s'>| "+data.arts[index].date+"</div>"+-->
+<!--          "</div>"+-->
+<!--          "<div class='top_name_article_s'>"+-->
+<!--          "<a class='title_article_s' href='"+data.arts[index].arturl+"'>"+data.arts[index].artname+"</a>"+-->
+<!--          "<div class='estimation_article_s'>"+-->
+<!--          "<div class='views_article_s'>👁 "+data.arts[index].v+"</div>"+-->
+<!--          "<img class='likes_img_article_s' src='/static/images/like.png'>"+-->
+<!--          "<div class='likes_article_s'>"+data.arts[index].l+"</div>"+-->
+<!--          "<img class='dilikes_img_article_s' src='/static/images/diLike.png'>"+-->
+<!--          "<div class='dilikes_article_s'>"+data.arts[index].dl+"</div>"+-->
+<!--          "</div>"+-->
+<!--          "</div>"+-->
+<!--          "<div class='center_content_article_s'>"+-->
+<!--          data.arts[index].content+-->
+<!--          "</div>"+-->
+<!--          "<a class='go_article_s' href='"+data.arts[index].arturl+"'>Читать дальше</a>"+-->
+<!--          "</div>"-->
+<!--          );-->
+<!--          });-->
+
+<!--        }-->
+<!--      })-->
+<!--    })-->
+<!--  })-->
+<!--                </script>-->
+                <div class="read_mess">
+                    <div class="text_read_mess">
+                        Читать дальше
+                    </div>
+                </div>
+{% for article in articles %}
+                <div class="article_block_s" style="padding-bottom: 10px;">
+                    <div class="top_user_article_s">
+                        <img class="ava_user_article_s" src="{{ article.user.avatar.url }}">
+                        <a class="name_user_article_s" href="{% url 'accounts:prof' article.user.identifier %}">{{article.user.username}}</a>
+                        <div class="date_article_s">| {{article.DateCreate|date:'Y.m.d'}}</div>
+                    </div>
+                    <div class="top_name_article_s">
+                        <a class="title_article_s" href="{% url 'articles:articles'%}?id={{article.id}}">{{article.title}}</a>
+                        <div class="estimation_article_s">
+                            <div class="views_article_s">👁 {{article.views}}</div>
+                            <img class="likes_img_article_s" src="{% static 'images/like.png' %}">
+                            <div class="likes_article_s">{{article.likes}}</div>
+                            <img class="dilikes_img_article_s" src="{% static 'images/diLike.png' %}">
+                            <div class="dilikes_article_s">{{article.dilikes}}</div>
+                        </div>
+                    </div>
+                    <div class="center_content_article_s">
+                        {{article.cover|safe}}
+                    </div>
+                    <a class="go_article_s" href="{% url 'articles:articles'%}?id={{article.id}}">Читать дальше</a>
+                </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+

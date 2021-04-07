@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(71062969, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71062969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+        {% load static %}
+        <link rel="icon" type="image/png" href="{% static 'icons/favicon.png' %}"/>
+		<link rel="icon" type="image/ico" sizes="32x32" href="{% static 'icons/favicon.ico' %}">
+		<link rel="icon" type="image/ico" sizes="16x16" href="{% static 'icons/favicon.ico' %}">
+		<link rel="icon" type="image/ico" sizes="48x48" href="{% static 'icons/favicon.ico' %}">
+		<link rel="manifest" href="{% static 'icons/manifest.json' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" >
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link href="{% static 'css/template.css' %}" rel="stylesheet">
+        <link href="{% static 'css/content.css' %}" rel="stylesheet">
+        <link href="{% static 'css/template_media.css' %}" rel="stylesheet">
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/menu-tab.js' %}"></script>
+    </head>
+    <body>
+    <div class="header">
+        <div class="container">
+            <div class="container_header">
+                <div class="left_block">
+                    <div class="m_menu">
+                        <div id="one"></div>
+                        <div id="two"></div>
+                        <div id="three"></div>
+                      </div>
+                    <img class="logo" src="{% static 'images/LogoMain.png' %}">
+                    <a class="button_header" href="#">Как стать автором</a>
+                </div>
+                <div class="main_news">
+                    <a class="main_new" href="{% url 'articles:articles'%}?id={{top_article.article.id}}">{{top_article.article.title}}</a>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="right_block_m">
+                    <span class="messages_count_header_m">100</span>
+                    <img class="messages_user_header_m" src="{% static 'images/email.png' %}">
+                    <a href="{% url 'accounts:prof' user.identifier %}"><img class="ava_user_header_m" src="{{ user.avatar.url }}"></a>
+                </div>
+                {% else %}
+                <div class="right_block_m">
+                    <a class="button_header" href="{% url 'accounts:login'%}">Вход</a>
+                    &nbsp;
+                    <a class="button_header" href="{% url 'accounts:reg'%}">Регистрация</a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="menu-hide">
+                <nav>
+                    <ul>
+                      <a href="{% url 'index:home' %}"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Главная</li></a>
+                        {% block l_home %}{% endblock %}
+                      <a href="{% url 'articles:articles' %}"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Статьи</li></a>
+                        {% block l_articles %}{% endblock %}
+                      <a href="{% url 'news:news' %}"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Новости</li></a>
+                        {% block l_news %}{% endblock %}
+                      <a href="{% url 'communities:communities' %}"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Сообщества</li></a>
+                        {% block l_communities %}{% endblock %}
+                      <a href="{% url 'accounts:accs' %}"><li class="base_menu_hide" style="padding-left: 15px;font-size: 20px;">Пользователи</li></a>
+                        {% block l_accs %}{% endblock %}
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+    <div class="under_header">
+        <div class="container">
+            <div class="container_under_header">
+                <div class="left_block_under_header">
+                    <a href="{% url 'index:home' %}"><div class="item_menu_under_header {% block head_main_home %}{% endblock %}">Главная</div></a>
+                    <a href="{% url 'articles:articles' %}"><div class="item_menu_under_header {% block head_main_articles %}{% endblock %}">Статьи</div></a>
+                    <a href="{% url 'news:news' %}"><div class="item_menu_under_header {% block head_main_news %}{% endblock %}">Новости</div></a>
+                    <a href="{% url 'communities:communities' %}"><div class="item_menu_under_header {% block head_main_communities %}{% endblock %}">Сообщества</div></a>
+                    <a href="{% url 'accounts:accs' %}"><div class="item_menu_under_header {% block head_main_accounts %}{% endblock %}">Пользователи</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content_main">
+            <div class="left_panel_content_main">
+                     {% block left_panel_content_main %}{% endblock %}
+            </div>
+            <div class="center_panel_content_main" style="display:block">
+                {% block center_panel_content_main %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,285 @@
+body{
+    background-color: rgb(73, 73, 73);
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.header{
+    background-color: rgb(95, 95, 95);;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.tapeHead{
+    background-color: rgb(95, 95, 95);;
+    width: 90%;
+    margin:10px auto;
+    height: 42px;
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 2px;
+}
+.blocks{
+    margin:auto auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 84%;
+}
+.leftPanel{
+    background-color: rgb(95, 95, 95);;
+    width: 20%;
+    height: 100%;
+
+}
+.centerPanel{
+    margin:0 10px;
+    background-color: rgb(95, 95, 95);;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+
+}
+
+.centerPanel::-webkit-scrollbar-track {
+background-color:rgba(0,0,0,0);
+}
+
+.centerPanel::-webkit-scrollbar-thumb {
+-webkit-border-radius: 3px;
+border-radius: 3px;
+background-color:rgb(139, 195, 74);;
+cursor:
+}
+
+.centerPanel::-webkit-scrollbar-thumb:hover{
+background-color:rgb(93 136 44);
+}
+
+
+.centerPanel::-webkit-scrollbar{
+width: 4px;
+}
+a{
+    text-decoration:none;
+}
+.rightLine{
+    background-color: rgb(95, 95, 95);;
+    width: 5px;
+    height: 100%;
+}
+
+
+.miniLogoHeader{
+    padding: 5px;
+    margin-left: 5%;
+    height: 80%;
+}
+.menuHeader{
+    margin-right: 5%;
+    width: 90%;
+    height: 100%;
+}
+.itemMenu{
+    float: right;
+    color: #a8a8a8;
+    font-size: 23px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    margin: auto 0;
+}
+.itemMenu:hover{
+    color: #46992f;
+}
+.itemMenu-min{
+    float: right;
+    word-wrap: inherit;
+    color: #a8a8a8;
+    font-size: 20px;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    margin: auto 0;
+    display: none;
+}
+.itemMenu-min:hover{
+    color: #46992f;
+}
+.itemtapeHead{
+    word-wrap: inherit;
+    color: rgb(216, 216, 216);
+    font-size: 15px;
+    padding-top: 11.3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    height: 73.9%;
+}
+.itemtapeHead:hover{
+    color:rgb(233, 233, 233);
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.active_tapeHead{
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    background-color: rgba(233, 233, 233, 0.1);
+    border-top: 2px solid rgb(139, 195, 74);
+    margin-top: -2px;
+}
+.Button_accounts_statistics{
+    padding: 0.9vw;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.Button_accounts_statistics:hover{
+    color:rgb(233, 233, 233);
+    background-color:rgba(233, 233, 233, 0.1);
+}
+.active{
+    background-color:rgba(233, 233, 233, 0.1);
+    border-left: 0.15vw solid rgb(139, 195, 74);
+}
+.menu-hide{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: rgb(95, 95, 95);
+    display:none;
+    left:-100%;
+    transition: all .5s ease-in-out;
+}
+.menu-a{
+    text-decoration: none;
+    width:100%;
+    font-size: 30px;
+    letter-spacing: 0.05vw;
+    font-family: 'Raleway';
+    color:rgb(216, 216, 216);
+}
+.menu-a li{
+    height: 70px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 70px;
+    transition: all .4s ease;
+    background-color: rgb(95, 95, 95);;
+}
+.menu-a li:hover{
+    background-color: #85858542;
+    transition: all .4s ease;
+}
+.m_menu{
+  height:100%;
+  cursor: pointer;
+  transition: all .6s ease-in-out;
+  display:none;
+}
+.active{
+  left: 345px;
+  transition: all 500ms ease-in-out;
+}
+.active #one{
+    transform: translateY(9px) rotate(-135deg);
+    transition: all .5s ease-in-out;
+    background-color: rgb(216, 216, 216);
+  }
+
+.active #two{
+    opacity: 0;
+    transition: .3s ease;
+  }
+  .active #three{
+    transform: translateY(-9px) rotate(-45deg);
+    transition: all .5s ease-in-out;
+    background-color: rgb(216, 216, 216);
+
+  }
+.m-div{
+    width: 33px;
+    height: 4px;
+    background-color: rgb(216, 216, 216);
+    display: block;
+    margin: 7px 5px;
+    transition: all .6s ease-in-out;
+}
+.menu-hide.show{
+  left: 0%;
+  transition: all .5s ease-in-out;
+}
+.User_ava{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(95, 95, 95);
+    border: 1px solid rgb(233, 233, 233);
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+@media screen and (max-device-width: 1000px) {
+    .leftPanel{
+        background-color: rgb(95, 95, 95);;
+        width: 100px;
+        height: 100%;
+    }
+    .centerPanel{
+        margin:0 10px;
+        background-color: rgb(95, 95, 95);;
+        width: 88.2%;
+        height: 100%;
+    }
+    .rightLine{
+        background-color: rgb(95, 95, 95);;
+        width: 3px;
+        height: 100%;
+    }
+}
+@media screen and (max-device-width: 500px) {
+    .leftPanel{
+        display: none;
+    }
+    .centerPanel{
+        margin:0 0px;
+        background-color: rgb(95, 95, 95);;
+        width: 100%;
+        height: 100%;
+    }
+    .rightLine{
+        display:none;
+    }
+    .itemMenu{
+        display: none;
+    }
+    .itemMenu-min{
+        display:block;
+    }
+    .tapeHead{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .m_menu{
+        display:block;
+    }
+    .menu-hide{
+        display:block;
+    }
+    .blocks {
+        width: 100%;
+        }
+        .centerPanel::-webkit-scrollbar{
+        width: 1px;
+        }
+}

@@ -1,0 +1,79 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_news %}
+    <a href="{% url 'news:news_add'%}"><li>Добавить новость</li></a>
+    <a href="{% url 'news:news'%}"><li>Последние новости</li></a>
+{% endblock %}
+{% block head_main_news %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                    <a href="{% url 'news:news_add'%}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Добавить новость</div></a>
+                    <a href="{% url 'news:news'%}"><div class="item_left_panel_content_main">Последние новости</div></a>
+                    {% for comm_p in comms_p%}
+                    <a href="{% url 'news:news'%}?communiti_id={{ comm_p.communiti.id}}" class="tg_adapt" data-catid={{comm_p.communiti.id}}><div class="item_left_panel_content_main">{{comm_p.communiti.title}}</div></a>
+                    {% endfor %}
+{% endblock %}
+{% block center_panel_content_main %}
+                <div action="/file/" class="Articles_content" id="message">
+                <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="Article">
+                    <div class="title_Article">
+                        <input required type="text" name="title" placeholder="Название новости" style="margin-top: 10px;background-color: rgb(95, 95, 95);outline: none;border: none;border-radius: 5px;font-size: 30px;font-weight: 600;color: rgb(233, 233, 233);font-family: 'Raleway';width: 100%;letter-spacing: 1px;flex-wrap: nowrap;">
+                    </div>
+                    <div class="tags_Article">
+
+                    </div>
+                    <div class="text_Article">
+                        <textarea id="mytextarea" name="content"><p style="text-align: center;"><span style="color: #ffffff; font-size: 24pt;">Hello!</span></p></textarea>
+
+
+                    </div>
+
+                </div>
+                    <p class="Button"><button type="submit" class="go_new_s" style="    background: transparent;    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;">Опубликовать</button></p>
+                <div class="stub">
+
+                </div>
+                </form>
+            </div>
+        <script src="https://cdn.tiny.cloud/1/dpgdbj1dxfl5stivvh15xvyciqtpk1qt6jbjnuciisvvm5sv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/tinymce_new.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

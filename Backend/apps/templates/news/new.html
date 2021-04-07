@@ -1,0 +1,138 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_news %}
+    {% if communiti_c%}
+    <a href="{% url 'news:news_add'%}"><li>Добавить новость</li></a>
+    {% endif %}
+    <a href="{% url 'news:news'%}"><li>Последние новости</li></a>
+{% endblock %}
+{% block head_main_news %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                    {% if communiti_c%}
+                    <a href="{% url 'news:news_add'%}"><div class="item_left_panel_content_main">Добавить новость</div></a>
+                    {% endif %}
+                    <a href="{% url 'news:news'%}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Последние новости</div></a>
+                    {% if User.is_authenticated %}
+                    {% for comm_p in comms_p%}
+                    <a href="{% url 'news:news'%}?communiti_id={{ comm_p.communiti.id}}" class="tg_adapt" data-catid={{comm_p.communiti.id}}><div class="item_left_panel_content_main {% if comm_p.communiti.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{comm_p.communiti.title}}</div></a>
+                    {% endfor %}
+                    {% else %}
+                    {% for comm_p in comms_p%}
+                    <a href="{% url 'news:news'%}?communiti_id={{ comm_p.id}}" class="tg_adapt" data-catid={{comm_p.id}}><div class="item_left_panel_content_main {% if comm_p.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{comm_p.title}}</div></a>
+                    {% endfor %}
+                    {% endif %}
+{% endblock %}
+{% block center_panel_content_main %}
+                <div class="new_block_s">
+                    <div class="top_group_new_s">
+                        <img class="ava_group_new_s" src="{{latest.communiti.ava.url}}" style="border-radius: 5px; border:none;">
+                        <a class="name_group_new_s" href="{% url 'communities:communiti_c' latest.communiti.identifier %}">{{latest.communiti.title}}</a>
+                        <div class="date_new_s">| {{latest.DateCreate|date:'Y.m.d'}}</div>
+                    </div>
+                    <div class="top_name_new_s">
+                        <a class="title_new_s" href="{% url 'news:news'%}?id={{latest.id}}">{{latest.title}}</a>
+                        <div class="estimation_new_s">
+                            <div class="views_new_s">👁 {{latest.views}}</div>
+                        </div>
+                    </div>
+                    <div class="center_content_new_s">
+                        {{latest.text|safe}}
+                    </div>
+                    <div class="center_content_new">
+                        {% if user.is_authenticated %}
+                        <img id="like" data-catid="{{latest.id}}" class="likes_img_new" src="{% if new_like == True%}{% static 'images/like.png' %}{% else %}{% static 'images/like_active.png' %}{% endif %}">
+                        <div class="likes_new">{{latest.likes}}</div>
+                        <img id="dilike" data-catid="{{latest.id}}" class="dilikes_img_new" src="{% if new_dilike == True%}{% static 'images/dilike.png' %}{% else %}{% static 'images/dilike_active.png' %}{% endif %}">
+                        <div class="dilikes_new">{{latest.dilikes}}</div>
+                        {% else %}
+                        <img data-catid="{{latest.id}}" class="likes_img_new" src="{% static 'images/like.png' %}">
+                        <div class="likes_new">{{latest.likes}}</div>
+                        <img data-catid="{{latest.id}}" class="dilikes_img_new" src="{% static 'images/dilike.png' %}">
+                        <div class="dilikes_new">{{latest.dilikes}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <script>
+                $('#like').click(likeFunc);
+                $('#dilike').click(dilikeFunc);
+                function likeFunc(){
+                   catid = $(this).attr("data-catid");
+                   $.ajax(
+                   {
+                   type:"GET",
+                   url: "/news/like",
+                   data: {id_new: catid},
+                   success: function(data) {
+                        arr_data = data.split(' ');
+                        var answer = arr_data[0];
+                        var numlike = +arr_data[1];
+                        var numdilike = +arr_data[2];
+                        console.log(arr_data);
+                        if (answer == "-"){
+                            $('.likes_new').html(numlike);
+                            $('.likes_img_new').attr('src',"/static/images/like.png");
+                        }
+                        else if (answer == "+"){
+                            $('.likes_new').html(numlike);
+                            $('.likes_img_new').attr('src',"/static/images/like_active.png");
+                        }
+                        else{
+                            $('.dilikes_new').html(numdilike);
+                            $('.dilikes_img_new').attr('src',"/static/images/dilike.png");
+                            $('.likes_new').html(numlike);
+                            $('.likes_img_new').attr('src',"/static/images/like_active.png");
+                        }
+                       }
+                   })
+                }
+                function dilikeFunc(){
+                   catid = $(this).attr("data-catid");
+                   $.ajax(
+                   {
+                   type:"GET",
+                   url: "/news/dilike",
+                   data: {id_new: catid},
+                   success: function(data) {
+                        arr_data = data.split(' ');
+                        var answer = arr_data[0];
+                        var numlike = +arr_data[1];
+                        var numdilike = +arr_data[2];
+                        if (answer == "-"){
+                            $('.dilikes_new').html(numdilike);
+                            $('.dilikes_img_new').attr('src',"/static/images/dilike.png");
+                        }
+                        else if (answer == "+"){
+                            $('.dilikes_new').html(numdilike);
+                            $('.dilikes_img_new').attr('src',"/static/images/dilike_active.png");
+                        }
+                        else{
+                            $('.likes_new').html(numlike);
+                            $('.likes_img_new').attr('src',"/static/images/like.png");
+                            $('.dilikes_new').html(numdilike);
+                            $('.dilikes_img_new').attr('src',"/static/images/dilike_active.png");
+                        }
+                       }
+                   })
+                }
+        </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

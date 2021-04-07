@@ -1,0 +1,120 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_communities %}
+    {% if User.is_authenticated %}
+    {% if communiti_c%}
+    <a href="{% url 'communities:communiti_c' my_communiti.identifier %}"><li>{{my_communiti.title}}</li></a>
+    {% else %}
+    <a href="{% url 'communities:communities_add' %}"><li>Создать сообщество</li></a>
+    {% endif %}
+    {% endif %}
+    <a href="{% url 'communities:communities' %}"><li>Все сообщества</li></a>
+    <a href="#"><li>Популярные</li></a>
+{% endblock %}
+{% block head_main_communities %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                {% if User.is_authenticated %}
+                {% if communiti_c%}
+                <a href="{% url 'communities:communiti_c' my_communiti.identifier %}"><div class="item_left_panel_content_main">{{my_communiti.title}}</div></a>
+                {% else %}
+                <a href="{% url 'communities:communities_add' %}"><div class="item_left_panel_content_main">Создать сообщество</div></a>
+                {% endif %}
+                {% endif %}
+                <a href="{% url 'communities:communities' %}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Все сообщества</div></a>
+                {% if User.is_authenticated %}
+                    {% for comm_p in comms_p%}
+                    <a href="{% url 'communities:communiti_c' comm_p.communiti.identifier%}" class="tg_adapt" data-catid={{comm_p.communiti.id}}><div class="item_left_panel_content_main {% if comm_p.communiti.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{comm_p.communiti.title}}</div></a>
+                    {% endfor %}
+                    {% else %}
+                    {% for comm_p in comms_p%}
+                    <a href="{% url 'communities:communiti_c' comm_p.identifier%}" class="tg_adapt" data-catid={{comm_p.id}}><div class="item_left_panel_content_main {% if comm_p.id == tg_id%}active_item_left_panel_content_main{%endif%}">{{comm_p.title}}</div></a>
+                    {% endfor %}
+                    {% endif %}
+{% endblock %}
+{% block center_panel_content_main %}
+{% load tag_p_check %}
+                    <table border="0" width="100%" cellpadding="5" style="color:rgb(233, 233, 233);">
+                    <tr style="font-size: 15px;">
+                     <th style="text-align:start ;">Название</th>
+                     <th width="100">Подписчики</th>
+                     <th width="100">Рейтинг</th>
+                    </tr>
+                        {% for communiti in communities %}
+                    <tr style="font-size: 20px;">
+                     <td style="align-items: center; display: flex;">
+                        <img src="{{communiti.ava.url}}" style="width: 64px; border-radius: 5px;">
+                        <div style="align-items: center; padding-left: 10px;">
+                            <a href="{% url 'communities:communiti_c' communiti.identifier %}" class="a_community_communities">
+                                <div>{{communiti.title}}</div>
+
+                            </a>
+                            <div style="font-size: 15px;">
+                                {{communiti.Description}}
+                            </div>
+                            <div style="font-size: 13px; padding-top: 3px;">
+                                Теги: {% for tag in communiti.tag_set.all%}{{tag.title}} {% endfor %}
+                            </div>
+                            {% if User.is_authenticated %}
+                            {%if communiti.id != my_communiti.id%}
+                            <a class="go_new_s" data-catid={{communiti.identifier}} style="cursor:pointer;">{{ communiti.id|check_comm:user.id }}</a>
+                            {%endif%}
+                            {% endif %}
+                        </div>
+                    </td>
+                     <td style="text-align:center ;" class="sub" data-catid={{communiti.identifier}}>{{communiti.subscribers}}</td>
+                     <td style="text-align:center ;">{{communiti.rating}}</td>
+                   </tr>
+                        {% endfor %}
+                  </table>
+                  <script>
+            $(function(){
+                var data = []
+                 $(".go_new_s").click(function(){
+                     $.ajax({
+                        type:"POST",
+                        url: "/communities/",
+                        data: {id_tag: $(this).attr('data-catid')},
+                        success: function(data) {
+                            var arr_data = data.split(' ');
+                            var answer = arr_data[0];
+                            var id_tag = arr_data[1];
+                            var name = arr_data[2];
+                            var sub = arr_data[3];
+                            if(answer == '+'){
+                                $(".go_new_s[data-catid="+id_tag+"]").html('Отписаться');
+                                $(".sub[data-catid="+id_tag+"]").html(sub);
+                                $(".left_panel_content_main").append("<a href='/communities/"+id_tag+"' class='tg_adapt' data-catid="+id_tag+"><div class='item_left_panel_content_main'>"+name+"</div></a>");
+                            }
+                            else{
+                                $(".go_new_s[data-catid="+id_tag+"]").html('Подписаться');
+                                $(".sub[data-catid="+id_tag+"]").html(sub);
+                                $(".tg_adapt[data-catid="+id_tag+"]").detach();
+                            }
+
+                        }
+                    })
+                });
+                
+            });
+        </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

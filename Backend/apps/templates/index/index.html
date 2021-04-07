@@ -1,0 +1,60 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_home %}
+                      <a href="{% url 'index:home' %}"><li>Информация</li></a>
+                      <a href="#"><li>О нас</li></a>
+                      <a href="#"><li>Как играть?</li></a>
+                      <a href="#"><li>Помощь</li></a>
+                      <a href="#"><li>Обратная связь</li></a>
+{% endblock %}
+{% block head_main_home %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                <img src="{% static 'images/LogoMain.png' %}" class="Logo_project_left_panel">
+                <a href="#"><div class="item_left_panel_content_main active_item_left_panel_content_main">Информация</div></a>
+                <a href="#"><div class="item_left_panel_content_main">О нас</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Как играть?</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Помощь</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Обратная связь</div></a>
+{% endblock %}
+{% block center_panel_content_main %}
+    <div class="title_index_info">
+                        <h1>Информация</h1>
+                    </div>
+                    <div class="text_index_info">
+                       Rus-Hytale - это потенциальный комплекс серверов различной тематики по игре Hytale. До выхода игры ведется активная разработка официального сайта проекта.
+                    </div>
+                    <div class="title_index_info">
+                        <h2>О сайте</h2>
+                    </div>
+                    <div class="text_index_info">
+                        Сайт представляет из себя информационную площадку для публикации различной информации о Hytale и Rus-Hytale. Если вам хочется поделиться интересной информацией о Hytale, вы можете сделать это на нашем сайте.
+                    </div>
+                    <div class="title_index_info">
+                        <h2>Зачем писать</h2>
+                    </div>
+                    <div class="text_index_info">
+                        <ol>
+                            <li>
+                                Написать статью — значит разложить тему по полочкам, обобщить информацию и поделиться с ней другими. Приносить пользу чертовски приятно, попробуйте.
+                            </li>
+                            <li>
+                              Ваши публикации — это ваша репутация в мире Hytale. Они лучше кого либо расскажут о ваших знания в Hytale.
+                            </li>
+                            <li>
+                              За первый крутой пост вы получаете эксклюзивные привелегии на наших будущих серверах.
+                            </li>
+                            <li>
+                              В дальнейшем за статьи с высоким рейтингом вы будите получать различные бонусы.
+                            </li>
+                          </ol>
+                    </div>
+{% endblock %}
+

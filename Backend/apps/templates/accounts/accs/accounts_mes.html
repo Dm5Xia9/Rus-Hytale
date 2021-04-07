@@ -1,0 +1,43 @@
+{% extends 'head.html'%}
+{% load static %}
+{% block accounts %}active_tapeHead{% endblock %}
+{% block title %}
+        <title>Пользователи</title>
+        <meta property="og:site_name" content="Пользователи | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Пользователи | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Пользователи | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+        <link href="{% static 'css/tapeHead.css' %}" rel="stylesheet">
+        <link href="{% static 'css/accounts.css' %}" rel="stylesheet">
+{% endblock %}
+{% block leftPanel %}
+            <div class="titleButtins">
+                Пользователи
+            </div>
+            <a href="{% url 'accounts:accs'%}"><div class="Button_accounts_statistics">
+                Обзор
+            </div></a>
+            <a href="{% url 'accounts:accs'%}?messages_count=10"><div class="Button_accounts_statistics active">
+                Больше всего сообщений
+            </div></a>
+            <a href="{% url 'accounts:accs'%}?Points=10"><div class="Button_accounts_statistics">
+                Больше всех баллов
+            </div></a>
+            <a href="#"><div class="Button_accounts_statistics">
+                Все пользователи
+            </div></a>
+{% endblock %}
+{% block center %}
+            <div class="messages_accounts">
+                {% for latest in Users_messages_count %}
+                <a href="{% url 'accounts:prof' latest.identifier %}"><div class="account_mes">
+                    <img class="avaAccount_Big"  src="/media/{{ latest.avatar }}">
+                    <div class="username_Big">{{latest.username}}</div>
+                    <div class="number_Big">{{latest.messages_count}}</div>
+                </div></a>
+                {% endfor %}
+            </div>
+            <div class="messages_accounts_end"><div class="end_border"></div></div>
+{% endblock %}
+

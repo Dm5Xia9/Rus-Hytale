@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>404</title>
+    <link href="{% static 'css/404style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container404">
+            <div class="body_inner404">
+                <div class="o404">упс.. 404</div>
+                <div class="text">страница не найдена :(</div>
+                <a href="{% url 'news:home'%}"><button class="button" type="button">
+                    на главную
+
+                </button></a>
+            </div>
+        </div>
+</body>
+</html>

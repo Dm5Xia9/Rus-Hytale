@@ -1,0 +1,157 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_articles %}
+                      <a href="{% url 'articles:articles_add' %}"><li>Написать статью</li></a>
+                      <a href="{% url 'articles:articles' %}"><li>Последние статьи</li></a>
+                      {% comment %} <a href="{% url 'articles:articles_pop' %}"><li>Популярное</li></a> {% endcomment %}
+{% endblock %}
+{% block head_main_articles %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                <a href="{% url 'articles:articles_add' %}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Написать статью</div></a>
+                <a href="{% url 'articles:articles' %}"><div class="item_left_panel_content_main">Последние статьи</div></a>
+                <a href="{% url 'articles:tag_list' %}"><div class="item_left_panel_content_main">Список тегов</div></a>
+                {% for tag_p in tags_p%}
+                <a href="{% url 'articles:articles'%}?tag_id={{tag_p.tag.id}}"><div class="item_left_panel_content_main">{{tag_p.tag.title}}</div></a>
+                {% endfor %}
+
+{% endblock %}
+{% block center_panel_content_main %}
+                <div action="/file/" class="Articles_content" id="message">
+                <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="Article">
+                    <div class="title_Article">
+                        <input required type="text" name="title" placeholder="Название статьи" style="margin-top: 10px;background-color: rgb(95, 95, 95);outline: none;border: none;border-radius: 5px;font-size: 30px;font-weight: 600;color: rgb(233, 233, 233);font-family: 'Raleway';width: 100%;letter-spacing: 1px;flex-wrap: nowrap;">
+                    </div>
+                    <div class="tags_Article">
+                        {% for tag_article in article.articles_tag_set.all %}
+                        <a>{{tag_article.tag}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="text_Article">
+                        <textarea id="mytextarea" name="content"><p style="text-align: center;"><span style="color: #ffffff; font-size: 24pt;">Hello!</span></p></textarea>
+
+
+                    </div>
+                    <input required type="text" name="data_tags" class="tags_input" style="display:none;">
+                <div class="my_tags">
+                    <div class="my_tag_content_text">
+                        <div class="my_tag_text">Теги:</div>
+                    </div>
+                    {% for tag_base in tags_base %}
+                    <div class="my_tag_content" style="display:none;" data-catid="{{tag_base.id}}">
+                        <div class="my_tag" data-catid="{{tag_base.id}}">{{tag_base.title}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="all_tags">
+                    {% for tag_base in tags_base %}
+                    <div class="all_tag_content" data-catid="{{tag_base.id}}">
+                        <div class="all_tag" data-catid="{{tag_base.id}}">{{tag_base.title}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+                    <p class="Button"><button type="submit" class="go_new_s" style="    background: transparent;    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;">Опубликовать</button></p>
+                <div class="stub">
+
+                </div>
+                </form>
+            </div>
+        <script src="https://cdn.tiny.cloud/1/dpgdbj1dxfl5stivvh15xvyciqtpk1qt6jbjnuciisvvm5sv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/tinymce_article.js' %}"></script>
+        <script>
+            $(function(){
+                var data = []
+                 $(".all_tag").click(function(){
+                     catid = $(this).attr("data-catid");
+                     $(".all_tag_content[data-catid='"+catid+"']").attr('style', 'display:none;');
+                     $(".my_tag_content[data-catid='"+catid+"']").attr('style', 'display:block;');
+                     data_object = $(".my_tag_content[style='display:block;']");
+                     var data = [];
+                     $.each(data_object,function(index,value){
+                        data.push($(data_object[index]).attr('data-catid'));
+                    });
+                     var dat=JSON.stringify(data);
+                     if(dat == "[]"){
+                        $(".tags_input").attr('value', '');
+                    }
+                    else{
+                        $(".tags_input").attr('value', dat);
+                    }
+                     
+                });
+                $(".my_tag").click(function(){
+                        catid = $(this).attr("data-catid");
+                        $(".my_tag_content[data-catid='"+catid+"']").attr('style', 'display:none;');
+                        $(".all_tag_content[data-catid='"+catid+"']").attr('style', 'display:block;');
+                        data_object = $(".my_tag_content[style='display:block;']");
+                     var data = [];
+                     $.each(data_object,function(index,value){
+                        data.push($(data_object[index]).attr('data-catid'));
+                    });
+                    var dat=JSON.stringify(data);
+                    if(dat == "[]"){
+                        $(".tags_input").attr('value', '');
+                    }
+                    else{
+                        $(".tags_input").attr('value', dat);
+                    }
+                     
+                });
+                
+            });
+        </script>
+{% endblock %}
+
+{% comment %} $(".go_new_s").click(function(){
+                    data_object = $(".my_tag_content[style='display:block;']");
+                    var data = [];
+                    $.each(data_object,function(index,value){
+                        data.push($(data_object[index]).attr('data-catid'));
+                    });
+                    var dat='data_tags='+JSON.stringify(data);
+                    $.ajax({
+                    type:"POST",
+                    url: "/articles/add/",
+                    data: dat,
+                    success: function(data) {}});
+                }); {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

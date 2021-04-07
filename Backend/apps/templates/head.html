@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(71062969, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71062969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+        {% load static %}
+        <link rel="icon" type="image/png" href="{% static 'icons/favicon.png' %}"/>
+		<link rel="icon" type="image/ico" sizes="32x32" href="{% static 'icons/favicon.ico' %}">
+		<link rel="icon" type="image/ico" sizes="16x16" href="{% static 'icons/favicon.ico' %}">
+		<link rel="icon" type="image/ico" sizes="48x48" href="{% static 'icons/favicon.ico' %}">
+		<link rel="manifest" href="{% static 'icons/manifest.json' %}">
+        <link href="{% static 'css/templ.css' %}" rel="stylesheet">
+        {% block title %}{% endblock %}
+        <link rel="preconnect" href="https://fonts.gstatic.com/" >
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script>
+            $(document).ready(function(){
+    $('.m_menu').click(function(){
+      $('.menu-hide').toggleClass('show');
+      $('.m_menu').toggleClass('active');
+    });
+    $('a').click(function(){
+      $('.menu-hide').removeClass('show');
+      $('.m_menu').removeClass('active');
+    });
+  });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="{% static 'images/LogoMain.png' %}" class="miniLogoHeader">
+            <div class="menuHeader">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'accounts:prof' user.identifier %}" class="itemMenu">{{user.username}}</a>
+                {% endif %}
+                <a href="#" class="itemMenu">Форум</a>
+                <a href="{% url 'articles:articles' %}" class="itemMenu">Лента</a>
+                <a href="{% url 'news:home' %}" class="itemMenu">Главная</a>
+                <a href="#" class="itemMenu-min"><img class="User_ava" src="/media/{{ user.avatar }}"></a>
+            </div>
+        </div>
+        <div class="tapeHead">
+            <div class="m_menu">
+                <div id="one" class="m-div"></div>
+                <div id="two" class="m-div"></div>
+                <div id="three" class="m-div"></div>
+            </div>
+            <a href="{% url 'news:home' %}" class="itemtapeHead {% block home %}{% endblock %}">Главная</a>
+            <a href="{% url 'articles:articles' %}" class="itemtapeHead {% block articles %}{% endblock %}">Статьи</a>
+            <a href="{% url 'news:news' %}" class="itemtapeHead {% block news %}{% endblock %}">Новости</a>
+            <a href="{% url 'accounts:accs' %}" class="itemtapeHead {% block accounts %}{% endblock %}">Пользователи</a>
+        </div>
+        <div class="menu-hide">
+            <nav>
+                <ul style="padding:0px;">
+                    <a href="#" class="menu-a"><li>Контакты</li></a>
+                    <a href="#" class="menu-a"><li>Работа</li></a>
+                    <a href="#" class="menu-a"><li>Курсы</li></a>
+                    <a href="#" class="menu-a"><li>Личный кабинет</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="blocks">
+            <div class="leftPanel">
+                {% block leftPanel %}{% endblock %}
+            </div>
+            <div class="centerPanel">
+                {% block center %}{% endblock %}
+            </div>
+            <div class="rightLine">
+
+            </div>
+        </div>
+    </body>
+</html>

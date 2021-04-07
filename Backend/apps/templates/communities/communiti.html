@@ -1,0 +1,99 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_communities %}
+    <a href="{% url 'communities:communiti_c' communiti.id %}"><li>Главная</li></a>
+    <a href="#"><li>Статьи</li></a>
+    <a href="#"><li>Активность</li></a>
+    <a href="#"><li>Настройки</li></a>
+{% endblock %}
+{% block head_main_communities %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                <a href="{% url 'communities:communiti_c' communiti.id %}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Главная</div></a>
+                <a href="{% url 'news:news'%}?communiti_id={{ communiti.id}}"><div class="item_left_panel_content_main">Новости</div></a>
+                {% if User.is_authenticated %}
+                {% if User.id == communiti.owner.id%}
+                <a href="#"><div class="item_left_panel_content_main">Настройки</div></a>
+                {% endif %}
+                {% endif %}
+{% endblock %}
+{% block center_panel_content_main %}
+                    <div class="top_profile_content">
+                    <div class="ava_profile_content">
+                        <img class="avaProfile_profile"  src="{{communiti.ava.url}}" style="border-radius: 5px;border:none;">
+                    </div>
+                    <div class="info_profile_content">
+                        <div class="top_info_profile_content">
+                            <div class="usernameProfile_profile">{{communiti.title}}</div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="groupProfile_profile">
+                                {{communiti.Description}}
+                            </div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="groupProfile_profile" style="    font-size: 14px;">
+                                Теги: {% for tag in communiti.tag_set.all%}{{tag.title}} {% endfor %}
+                            </div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="messagesProfile_profile">
+                                Подписчики:<a href="">0</a>
+                            </div>
+                            <div class="pointsProfile_profile">
+                                Рейтинг:<a href="">0</a>
+                            </div>
+                        </div>
+
+<!--                        <div class="subscriptions_profile">-->
+<!--                            <div class="block_subscription_profile">-->
+<!--                                <a href="#"><img class="subscription_profile" src="images/LogoMain.png"></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <div class="wall_profile">
+                    <div class="head_messages_profile">
+                        <form class="form_messages">
+                            <input type="text" class="input_message_messages">
+                            <div class="submin_content_message_messages">
+                                <button type="submit" class="submin_message_messages"><img src="{% static 'images/go_messages.png' %}"></button>
+                                <button type="submit" class="answer_message_messages"><img src="{% static 'images/answer.png' %}"></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="none_wall_profile">
+                        Пока тут ничего нету :(
+                    </div>
+<!--                    <div class="user_wall_profile">-->
+<!--                        <img src="{{communiti.ava.url}}" class="ava_user_wall_profile" style="border-radius: 5px;border:none;">-->
+<!--                        <div class="username_user_wall_profile">{{communiti.title}}</div>-->
+<!--                        <div class="date_user_wall_profile">2020.02.03</div>-->
+<!--                    </div>-->
+<!--                    <div class="content_wall_profile">-->
+<!--                        <div class="text_content_wall_profile">-->
+<!--                            <img alt="" src="https://rushytale.ru/RusHytale/media/images_articles/blog_cover_40beb4be3b407742cfee642d1e34fadf_2020_december_dev_update.jpg" width="100%">-->
+<!--                            Всем привет! Сегодня мы собираемся ввести вас в курс дела о том, что происходило в студии Hypixel за последние пару месяцев, и оглянуться назад на 2020 год в целом. Сегодня мы не раскрываем новые функции и не говорим о планах запуска, поскольку мы глубоко погружены в производство и не готовы к этому. Тем не менее, мы хотим, чтобы вы знали, где мы находимся, и дать вам представление о том, что мы делаем, чтобы гарантировать, что Hytale оправдает свой потенциал.-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

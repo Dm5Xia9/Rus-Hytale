@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Регистрация | Комплекс серверов Rus-Hytale</title>
+    <meta property="og:site_name" content="Регистрация | Сервера по игре Hytale" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Регистрация | Сервера по игре Hytale" />
+    <meta property="twitter:title" content="Регистрация | Сервера по игре Hytale" />
+    <meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" >
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+</head>
+<body>
+    <div class="AuthBlock">
+        <img src="{% static 'images/LogoMain.png' %}" class="imgLogo">
+        <form method="post" class="formLogin">
+            {% csrf_token %}
+                <div class="">
+                {% for field in form %}
+                <div class="form-group">
+                <div class="in">{{field}}</div>
+                </div>
+            {% endfor %}
+                    </div>
+            <button type="submit" class="ButtonNewsAnim">Создать</button>
+            </form>
+        <div class="regText">Есть аккаунт? <a href="{% url 'accounts:login' %}" class="aRegText">Войти</a></div>
+        {% for field in form %}
+        <div class="message">
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+

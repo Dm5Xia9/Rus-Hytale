@@ -1,0 +1,162 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_articles %}
+                      <a href="{% url 'articles:articles_add' %}"><li>Написать статью</li></a>
+                      <a href="{% url 'articles:articles' %}"><li>Последние статьи</li></a>
+                      {% comment %} <a href="{% url 'articles:articles_pop' %}"><li>Популярное</li></a> {% endcomment %}
+{% endblock %}
+{% block head_main_articles %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                <a href="{% url 'articles:articles_add' %}"><div class="item_left_panel_content_main">Написать статью</div></a>
+                <a href="{% url 'articles:articles' %}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Последние статьи</div></a>
+                <a href="{% url 'articles:tag_list' %}"><div class="item_left_panel_content_main">Список тегов</div></a>
+                {% for tag_p in tags_p%}
+                <a href="{% url 'articles:articles'%}?tag_id={{tag_p.tag.id}}"><div class="item_left_panel_content_main">{{tag_p.tag.title}}</div></a>
+                {% endfor %}
+
+{% endblock %}
+{% block center_panel_content_main %}
+                <div class="article_block_s">
+                    <div class="top_user_article_s">
+                        <img class="ava_user_article_s" src="{{ article.user.avatar.url }}">
+                        <a class="name_user_article_s" href="{% url 'accounts:prof' article.user.identifier %}">{{article.user.username}}</a>
+                        <div class="date_article_s">| {{article.DateCreate|date:'Y.m.d'}}</div>
+                    </div>
+                    <div class="top_name_article_s">
+                        <a class="title_article_s" href="{% url 'articles:articles'%}?id={{article.id}}">{{article.title}}</a>
+                        <div class="estimation_article_s">
+                            <div class="views_article_s">👁 {{article.views}}</div>
+                        </div>
+                    </div>
+                    <div class="center_content_article_s">
+                        {{article.content|safe}}
+                    </div>
+                    <div class="center_content_article">
+                        {% if user.is_authenticated %}
+                        <img id="like" data-catid="{{article.id}}" class="likes_img_article" src="{% if article_like == True%}{% static 'images/like.png' %}{% else %}{% static 'images/like_active.png' %}{% endif %}">
+                        <div class="likes_article">{{article.likes}}</div>
+                        <img id="dilike" data-catid="{{article.id}}" class="dilikes_img_article" src="{% if article_dilike == True%}{% static 'images/dilike.png' %}{% else %}{% static 'images/dilike_active.png' %}{% endif %}">
+                        <div class="dilikes_article">{{article.dilikes}}</div>
+                        {% else %}
+                        <img data-catid="{{article.id}}" class="likes_img_article" src="{% static 'images/like.png' %}">
+                        <div class="likes_article">{{article.likes}}</div>
+                        <img data-catid="{{article.id}}" class="dilikes_img_article" src="{% static 'images/dilike.png' %}">
+                        <div class="dilikes_article">{{article.dilikes}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <script>
+                $('#like').click(likeFunc);
+                $('#dilike').click(dilikeFunc);
+                function likeFunc(){
+                   catid = $(this).attr("data-catid");
+                   $.ajax(
+                   {
+                   type:"GET",
+                   url: "/articles/like",
+                   data: {id_article: catid},
+                   success: function(data) {
+                        arr_data = data.split(' ');
+                        var answer = arr_data[0];
+                        var numlike = +arr_data[1];
+                        var numdilike = +arr_data[2];
+                        if (answer == "-"){
+                            $('.likes_article').html(numlike);
+                            $('.likes_img_article').attr('src',"/static/images/like.png");
+                        }
+                        else if (answer == "+"){
+                            $('.likes_article').html(numlike);
+                            $('.likes_img_article').attr('src',"/static/images/like_active.png");
+                        }
+                        else{
+                            $('.dilikes_article').html(numdilike);
+                            $('.dilikes_img_article').attr('src',"/static/images/dilike.png");
+                            $('.likes_article').html(numlike);
+                            $('.likes_img_article').attr('src',"/static/images/like_active.png");
+                        }
+                       }
+                   })
+                }
+                function dilikeFunc(){
+                   catid = $(this).attr("data-catid");
+                   $.ajax(
+                   {
+                   type:"GET",
+                   url: "/articles/dilike",
+                   data: {id_article: catid},
+                   success: function(data) {
+                        arr_data = data.split(' ');
+                        var answer = arr_data[0];
+                        var numlike = +arr_data[1];
+                        var numdilike = +arr_data[2];
+                        if (answer == "-"){
+                            $('.dilikes_article').html(numdilike);
+                            $('.dilikes_img_article').attr('src',"/static/images/dilike.png");
+                        }
+                        else if (answer == "+"){
+                            $('.dilikes_article').html(numdilike);
+                            $('.dilikes_img_article').attr('src',"/static/images/dilike_active.png");
+                        }
+                        else{
+                            $('.likes_article').html(numlike);
+                            $('.likes_img_article').attr('src',"/static/images/like.png");
+                            $('.dilikes_article').html(numdilike);
+                            $('.dilikes_img_article').attr('src',"/static/images/dilike_active.png");
+                        }
+                       }
+                   })
+                }
+                    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

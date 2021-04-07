@@ -1,0 +1,192 @@
+{% extends 'template.html'%}
+{% load static %}
+{% block l_accs %}
+    <a href="{% url 'accounts:prof' UserNow.identifier %}"><li>Профиль</li></a>
+    {% if User.is_authenticated %}
+    {% if User.id == UserNow.id%}
+    <a href="{% url 'accounts:settings'%}"><li>Настройки</li></a>
+    <a href="{% url 'accounts:logout' %}"><li>Выйти</li></a>
+    {% endif %}
+    {% endif %}
+{% endblock %}
+{% block head_main_accounts %}active_under_item{% endblock %}
+{% block title %}
+        <title>Комплекс серверов Rus-Hytale</title>
+        <meta property="og:site_name" content="Rus-Hytale | Сервера по игре Hytale" />
+	    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta property="twitter:title" content="Rus-Hytale | Сервера по игре Hytale" />
+		<meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+{% endblock %}
+{% block left_panel_content_main %}
+                <a href="{% url 'accounts:prof' UserNow.identifier %}"><div class="item_left_panel_content_main active_item_left_panel_content_main">Профиль</div></a>
+                <a href="{% url 'articles:articles'%}?user_id={{UserNow.id}}"><div class="item_left_panel_content_main">Статьи</div></a>
+                <a href="#"><div class="item_left_panel_content_main">Друзья</div></a>
+                {% if User.is_authenticated %}
+                {% if User.id == UserNow.id%}
+                <a href="{% url 'accounts:settings'%}"><div class="item_left_panel_content_main">Настройки</div></a>
+                <a href="{% url 'accounts:logout' %}"><div class="item_left_panel_content_main">Выйти</div></a>
+                {% endif %}
+                {% endif %}
+{% endblock %}
+{% block center_panel_content_main %}
+{% load tag_p_check %}
+                    <div class="top_profile_content">
+                    <div class="ava_profile_content">
+                        <img class="avaProfile_profile"  src="{{ UserNow.avatar.url}}">
+                    </div>
+                    <div class="info_profile_content">
+                        <div class="top_info_profile_content">
+                            <div class="usernameProfile_profile">{{UserNow.username}}</div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="groupProfile_profile">
+                                {{UserNow.Description}}
+                            </div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="messagesProfile_profile">
+                                Статей:<a href="{% url 'articles:articles'%}?user_id={{UserNow.id}}">{{UserNow.messages_count}}</a>
+                            </div>
+                            <div class="pointsProfile_profile">
+                                Баллов:<a>{{UserNow.Points}}</a>
+                            </div>
+                        </div>
+                        <div class="center_info_profile_content">
+                            <div class="messagesProfile_profile">
+                                Подписчики:<a>{{UserNow.subscribers}}</a>
+                            </div>
+                            <div class="pointsProfile_profile">
+                                Друзья:<a href="">0</a>
+                            </div>
+                        </div>
+                        <div class="end_end_info_profile_content">
+                            <div class="regProfile_profile">
+                                Дата регистрации: <div class="attention">{{UserNow.date_joined|date:'Y.m.d'}}</div>
+                            </div>
+                            <div class="lastProfile_profile">
+                                Последняя активность: <div class="attention">{{UserNow.last_login|date:'Y.m.d'}}</div>
+                            </div>
+                        </div>
+                        <div class="subscriptions_profile">
+                            {% for comm in UserNow.communiti_set.all%}
+                            <div class="block_subscription_profile">
+                                <a href="{% url 'communities:communiti_c' comm.identifier %}"><img class="subscription_profile" src="{{comm.ava.url}}"></a>
+                            </div>
+                            {% endfor %}
+                            {% for comm in UserNow.communiti_interest_set.all%}
+                            <div class="block_subscription_profile">
+                                <a href="{% url 'communities:communiti_c' comm.communiti.identifier %}"><img class="subscription_profile" src="{{comm.communiti.ava.url}}"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="wall_profile">
+                    {% if User.is_authenticated %}
+                    {% if User.id == UserNow.id%}
+                    <div class="head_messages_profile">
+                        <form class="form_messages" method="post">
+                            <input type="text" class="input_message_messages" name="content">
+                            <div class="submin_content_message_messages" style="padding-left: 5px;">
+                                <div class="submin_message_messages"><img src="{% static 'images/go_messages.png' %}"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        $(function(){
+                            $('.submin_message_messages').click(function(){
+                                if($('.input_message_messages').val().length > 0 && $('.input_message_messages').val().length<10000){
+                                $.ajax({
+                                    type:"POST",
+                                    url: "/accounts/{{User.identifier}}/",
+                                    data: {type: 0, content: $('.input_message_messages').val().replace(/<\/?[^>]+>/g,'')},
+                                    success: function(data) {
+                                        $('.none_wall_profile').attr('style', 'display:none');
+                                        $('.input_message_messages').val('');
+                                        $('.content_posts').prepend(
+                                        "<div class='user_wall_profile'>"+
+                                        "<img src='{{User.avatar.url}}' class='ava_user_wall_profile'>"+
+                                        "<div class='username_user_wall_profile'>{{User.username}}</div>"+
+                                        "<div class='date_user_wall_profile'>2020.02.03</div>"+
+                                        "</div>"+
+                                        "<div class='content_wall_profile'>"+
+                                        "<div class='text_content_wall_profile'>"+
+                                        data.text_post +
+                                        "</div>"+
+                                        "</div>"
+                                        );
+                                    }
+                                });
+                                };
+                            });
+                        });
+                    </script>
+                    {% endif %}
+                    {% endif %}
+                    {% if StartPosts|cou == 0 %}
+                    <div class="none_wall_profile">
+                        Пока тут ничего нету :(
+                    </div>
+                    {% endif %}
+                    <div class="content_posts">
+                        {% for post in StartPosts %}
+                        <div class="user_wall_profile">
+                            <img src="{{post.user_post.avatar.url}}" class="ava_user_wall_profile">
+                            <div class="username_user_wall_profile">{{post.user_post.username}}</div>
+                            <div class="date_user_wall_profile">2020.02.03</div>
+                        </div>
+                        <div class="content_wall_profile">
+                            <div class="text_content_wall_profile">
+                                {{post.content}}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="info_posts" data-catid="{{StartPosts|cou}}" style="display:none;">
+                <div class="info_ajax" data-catid="0" style="display:none;">
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $('.form_messages').keydown(function(event){
+                            if(event.keyCode == 13) {
+                            event.preventDefault();
+                            return false;
+                            }
+                       });
+                    });
+                </script>
+                <script>
+                $(window).scroll(function(){
+                        var rr = 0;
+                        if(Math.floor($(document).height() - $(window).height() - $(window).scrollTop()) < 20 && $('.info_ajax').attr('data-catid') == '0'){
+                            $('.info_ajax').attr('data-catid', '1')
+                            $.ajax({
+                                    type:"POST",
+                                    url: "/accounts/{{User.identifier}}/",
+                                    data: {type: 1, last_post: $('.info_posts').attr('data-catid')},
+                                    success: function(data) {
+                                        $('.info_posts').attr('data-catid', data.len)
+                                        $.each(data.contents,function(index,value){
+                                            $('.content_posts').append(
+                                            "<div class='user_wall_profile'>"+
+                                            "<img src='"+data.avatars[index]+"' class='ava_user_wall_profile'>"+
+                                            "<div class='username_user_wall_profile'>"+data.usernames[index]+"</div>"+
+                                            "<div class='date_user_wall_profile'>2020.02.03</div>"+
+                                            "</div>"+
+                                            "<div class='content_wall_profile'>"+
+                                            "<div class='text_content_wall_profile'>"+
+                                            data.contents[index] +
+                                            "</div>"+
+                                            "</div>"
+                                            );
+                                        });
+                                        $('.info_ajax').attr('data-catid', '0')
+                                    }
+                            });
+                        }
+                })
+                </script>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Вход | Комплекс серверов Rus-Hytale</title>
+    <meta property="og:site_name" content="Вход | Сервера по игре Hytale" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Вход | Сервера по игре Hytale" />
+    <meta property="twitter:title" content="Вход | Сервера по игре Hytale" />
+    <meta name="Description" content="Официальный сайт русскоязычного комплекса серверов по Hytale"/>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" >
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+</head>
+<body>
+    <div class="AuthBlock">
+        <img src="{% static 'images/LogoMain.png' %}" class="imgLogo">
+        <form method="post" class="formLogin">
+            {% csrf_token %}
+                <div class="">
+                {% for field in form %}
+                <div class="form-group">
+                <div class="in">{{field}}</div>
+                <div class="error">{{field.errors}}</div>
+                </div>
+            {% endfor %}
+                    </div>
+            {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+            <button type="submit" class="ButtonNewsAnim">Войти</button>
+            </form>
+        <div class="regText">Нет аккаунта? <a href="{% url 'accounts:reg' %}" class="aRegText">Зарегистрироваться</a></div>
+    </div>
+</body>
+</html>
+
+
